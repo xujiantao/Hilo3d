@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>glTF loader example</title>
+    <link rel="stylesheet" type="text/css" href="../example.css">
+    <style>
+        #modelSelect,
+        #cameraSelect {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 99999;
+        }
+        #cameraSelect {
+            top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <select name="modelSelect" id="modelSelect"></select>
+    <select name="cameraSelect" id="cameraSelect"></select>
+    <script src="../../build/Hilo3d.js"></script>
+    <script src="../js/stats.js"></script>
+    <script src="../js/OrbitControls.js"></script>
+    <script src="../js/init.js"></script>
+    <script>
+        var ossBasePath = '//ossgw.alicdn.com/tmall-c3/tmx/';
+        var glTFModels = {
+            Box: {
+                name: 'Box',
+                src: '092285f3eca14b2b3f590261d27694b3.gltf'
+            },
+            Rambler: {
+                name: 'Rambler Lego',
+                src: '7f5f0789d600d086103a369a0fd9842b.gltf'
+            },
+            Duck: {
+                name: 'Duck',
+                isProgressive: false,
+                src: '859ac4d64d171143b730d35da4de7ea8.gltf'
+            },
+            Zombie: {
+                name: 'Zombie',
+                isProgressive: true,
+                src: '3e518e228afbc9217006531e7e9a21aa.gltf'
+            },
+            JPN: {
+                name: 'JPN',
+                useInstanced: false,
+                src: '0356679fd543809bba95dfaea32e1d45.gltf'
+            },
+            dota2Lina: {
+                name: 'Lina',
+                isProgressive: true,
+                src: '59724b74e80d9d1211456f0917cea75d.gltf'
+            },
+            VC: {
+                name: 'VC',
+                notOSS: true,
+                isProgressive: false,
+                src: '../models/VC/VC.gltf'
+            },
+            JC:{
+                name: 'JC',
+                notOSS: true,
+                isProgressive: false,
+                src: '../models/JC/mod_4w.gltf'
+            },
+            test: {
+                name: 'test',
+                notOSS: true,
+                isProgressive: false,
+                src: '/model-viewer/models/test/test.gltf'
+                // src: '/glTF-Sample-Models/1.0/Buggy/glTF/Buggy.gltf'
+            }
+        };
+
+        var loader = new Hilo3d.GLTFLoader();
+        var modelSelect = document.getElementById('modelSelect');
+        var cameraSelect = document.getElementById('cameraSelect');
+        var currentModel = null;
+        function showModel(modelInfo) {
+            loader.load(modelInfo).then(function(model){
+                if (currentModel) {
+                    currentModel.node.removeFromParent();
+                    currentModel.anim && currentModel.anim.stop();
+                } else {
+                    modelSelect.value = modelInfo.name;
+                }
+                cameraSelect.innerHTML = '<option value="default">default</option>';
+                currentModel = model;
+                model.node.setScale(0.001);
+                if (model.cameras.length) {
+                    for (var i = 0; i < model.cameras.length; i++) {
+                        var opt = document.createElement('option');
+                        opt.innerText = model.cameras[i].name;
+                        opt.setAttribute('value', i);
+                        cameraSelect.appendChild(opt);
+                    }
+                }
+                stage.camera = camera;
+                stage.addChild(model.node);
+            });
+        }
+
+        for (var name in glTFModels) {
+            if (!glTFModels[name].notOSS) {
+                glTFModels[name].src = ossBasePath + glTFModels[name].src;
+            }
+            var opt = document.createElement('option');
+            opt.innerText = name;
+            opt.setAttribute('value', name);
+            modelSelect.appendChild(opt);
+        }
+
+        var modelInfo = glTFModels.JPN;
+        var query = location.search.slice(1);
+        if (glTFModels[query]) {
+            modelInfo = glTFModels[query];
+        } else if (query) {
+            modelInfo = {
+                isProgressive: true,
+                src: ossBasePath + query + '.gltf'
+            };
+        }
+
+        showModel(modelInfo);
+        modelSelect.addEventListener('change', function () {
+            location.search = '?' + modelSelect.value;
+            // showModel(glTFModels[modelSelect.value]);
+        });
+        cameraSelect.addEventListener('change', function() {
+            var value = Number(cameraSelect.value);
+            if (!value || !currentModel.cameras[value]) {
+                stage.camera = camera;
+            } else {
+                stage.camera = currentModel.cameras[value];
+            }
+        });
+
+        stage.addChild(new Hilo3d.AxisHelper({ size: 1 }));
+
+        var pointLight = new Hilo3d.PointLight({
+            color:new Hilo3d.Color(.3, .3, .3),
+            x:5,
+            y:2,
+            z:15,
+            linearAttenuation:0.03,
+            quadraticAttenuation:0.0017
+        });
+        stage.addChild(pointLight);
+
+        var blueBox = new Hilo3d.Mesh({
+            geometry: new Hilo3d.BoxGeometry(),
+            material: new Hilo3d.BasicMaterial({
+                diffuse: new Hilo3d.Color(0, 0, 1),
+                lightType:'NONE'
+            })
+        });
+        blueBox.setScale(0.1);
+        pointLight.addChild(blueBox);
+
+        Hilo3d.Tween.to(pointLight, {
+            x:-5
+        }, {
+            duration:2000,
+            loop:true,
+            reverse:true
+        });
+    </script>
+</body>
+</html>

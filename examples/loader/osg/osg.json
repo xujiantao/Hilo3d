@@ -1,0 +1,2753 @@
+{
+  "Generator": "OpenSceneGraph 3.2.1", 
+  "Version": 7, 
+  "osg.Node": {
+    "Children": [ {
+      "osg.Node": {
+        "UniqueID": 0, 
+        "Name": "Root", 
+        "StateSet": {
+          "osg.StateSet": {
+            "UniqueID": 1, 
+            "AttributeList": [ {
+              "osg.Material": {
+                "UniqueID": 2, 
+                "Ambient": [ 0, 0, 0, 1], 
+                "Diffuse": [ 0.64, 0.64, 0.64, 1], 
+                "Emission": [ 0, 0, 0, 1], 
+                "Shininess": 10, 
+                "Specular": [ 0.5, 0.5, 0.5, 1]
+              }
+            } ]
+          }
+        }, 
+        "Children": [ {
+          "osg.MatrixTransform": {
+            "UniqueID": 3, 
+            "Name": "Circle.003", 
+            "Matrix": [ 0.90972, 0, 0, 0, 0, 0.90972, 0, 0, 0, 0, 0.90972, 0, 0.71087, 0.10262, 2.17488, 1 ], 
+            "Children": [ {
+              "osg.Node": {
+                "UniqueID": 4, 
+                "Name": "GeodeMesh", 
+                "Children": [ {
+                  "osg.Geometry": {
+                    "UniqueID": 5, 
+                    "Name": "Circle.003", 
+                    "StateSet": {
+                      "osg.StateSet": {
+                        "UniqueID": 6, 
+                        "Name": "glass", 
+                        "AttributeList": [ {
+                          "osg.Material": {
+                            "UniqueID": 8, 
+                            "Name": "glass", 
+                            "Ambient": [ 0, 0, 0, 1], 
+                            "Diffuse": [ 0.64, 0.64, 0.64, 1], 
+                            "Emission": [ 0, 0, 0, 1], 
+                            "Shininess": 12.5, 
+                            "Specular": [ 0.5, 0.5, 0.5, 1], 
+                            "UserDataContainer": {
+                              "UniqueID": 9, 
+                              "Values": [ {
+                                "Name": "source", 
+                                "Value": "blender"
+                              },
+                              {
+                                "Name": "DiffuseIntensity", 
+                                "Value": "0.800000011920929"
+                              },
+                              {
+                                "Name": "DiffuseColor", 
+                                "Value": "[ 0.800000, 0.800000, 0.800000 ]"
+                              },
+                              {
+                                "Name": "SpecularIntensity", 
+                                "Value": "0.5"
+                              },
+                              {
+                                "Name": "SpecularColor", 
+                                "Value": "[ 1.000000, 1.000000, 1.000000 ]"
+                              },
+                              {
+                                "Name": "SpecularHardness", 
+                                "Value": "50"
+                              },
+                              {
+                                "Name": "Emit", 
+                                "Value": "0.0"
+                              },
+                              {
+                                "Name": "Ambient", 
+                                "Value": "1.0"
+                              },
+                              {
+                                "Name": "Translucency", 
+                                "Value": "0.0"
+                              },
+                              {
+                                "Name": "DiffuseShader", 
+                                "Value": "LAMBERT"
+                              },
+                              {
+                                "Name": "SpecularShader", 
+                                "Value": "COOKTORR"
+                              } ]
+                            }
+                          }
+                        } ], 
+                        "UserDataContainer": {
+                          "UniqueID": 7, 
+                          "Values": [ {
+                            "Name": "source", 
+                            "Value": "blender"
+                          } ]
+                        }
+                      }
+                    }, 
+                    "PrimitiveSetList": [ {
+                      "DrawElementsUShort": {
+                        "UniqueID": 12, 
+                        "Indices": {
+                          "Array": { 
+                            "Uint16Array": { 
+                              "File": "model_file.bin.gz",
+                              "Size": 33,
+                              "Offset": 0
+                            }
+                          }, 
+                          "ItemSize": 1, 
+                          "Type": "ELEMENT_ARRAY_BUFFER"
+                        }, 
+                        "Mode": "TRIANGLES"
+                      }
+                    },
+                    {
+                      "DrawElementsUShort": {
+                        "UniqueID": 13, 
+                        "Indices": {
+                          "Array": { 
+                            "Uint16Array": { 
+                              "File": "model_file.bin.gz",
+                              "Size": 78,
+                              "Offset": 68
+                            }
+                          }, 
+                          "ItemSize": 1, 
+                          "Type": "ELEMENT_ARRAY_BUFFER"
+                        }, 
+                        "Mode": "TRIANGLE_STRIP"
+                      }
+                    } ], 
+                    "VertexAttributeList": {
+                      "Normal": {
+                        "UniqueID": 11, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 48,
+                            "Offset": 224
+                          }
+                        }, 
+                        "ItemSize": 3, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "Vertex": {
+                        "UniqueID": 10, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 48,
+                            "Offset": 800
+                          }
+                        }, 
+                        "ItemSize": 3, 
+                        "Type": "ARRAY_BUFFER"
+                      }
+                    }
+                  }
+                } ]
+              }
+            } ]
+          }
+        },
+        {
+          "osg.MatrixTransform": {
+            "UniqueID": 14, 
+            "Name": "Plane.002", 
+            "Matrix": [ 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0.10262, 0.11466, 1 ], 
+            "Children": [ {
+              "osg.Node": {
+                "UniqueID": 15, 
+                "Name": "GeodePlane.002", 
+                "Children": [ {
+                  "osg.Geometry": {
+                    "UniqueID": 16, 
+                    "Name": "Plane.002", 
+                    "StateSet": {
+                      "osg.StateSet": {
+                        "UniqueID": 17, 
+                        "Name": "Floor", 
+                        "AttributeList": [ {
+                          "osg.Material": {
+                            "UniqueID": 19, 
+                            "Name": "Floor", 
+                            "Ambient": [ 0, 0, 0, 1], 
+                            "Diffuse": [ 0.64, 0.64, 0.64, 1], 
+                            "Emission": [ 0, 0, 0, 1], 
+                            "Shininess": 12.5, 
+                            "Specular": [ 0.5, 0.5, 0.5, 1], 
+                            "UserDataContainer": {
+                              "UniqueID": 20, 
+                              "Values": [ {
+                                "Name": "source", 
+                                "Value": "blender"
+                              },
+                              {
+                                "Name": "DiffuseIntensity", 
+                                "Value": "0.800000011920929"
+                              },
+                              {
+                                "Name": "DiffuseColor", 
+                                "Value": "[ 0.800000, 0.800000, 0.800000 ]"
+                              },
+                              {
+                                "Name": "SpecularIntensity", 
+                                "Value": "0.5"
+                              },
+                              {
+                                "Name": "SpecularColor", 
+                                "Value": "[ 1.000000, 1.000000, 1.000000 ]"
+                              },
+                              {
+                                "Name": "SpecularHardness", 
+                                "Value": "50"
+                              },
+                              {
+                                "Name": "Emit", 
+                                "Value": "0.0"
+                              },
+                              {
+                                "Name": "Ambient", 
+                                "Value": "1.0"
+                              },
+                              {
+                                "Name": "Translucency", 
+                                "Value": "0.0"
+                              },
+                              {
+                                "Name": "DiffuseShader", 
+                                "Value": "LAMBERT"
+                              },
+                              {
+                                "Name": "SpecularShader", 
+                                "Value": "COOKTORR"
+                              } ]
+                            }
+                          }
+                        } ], 
+                        "UserDataContainer": {
+                          "UniqueID": 18, 
+                          "Values": [ {
+                            "Name": "source", 
+                            "Value": "blender"
+                          },
+                          {
+                            "Name": "00_UsePremultiplyAlpha", 
+                            "Value": "false"
+                          },
+                          {
+                            "Name": "00_UseAlpha", 
+                            "Value": "true"
+                          },
+                          {
+                            "Name": "00_DiffuseColor", 
+                            "Value": "1.0"
+                          },
+                          {
+                            "Name": "00_BlendType", 
+                            "Value": "MIX"
+                          } ]
+                        }
+                      }
+                    }, 
+                    "PrimitiveSetList": [ {
+                      "DrawElementsUShort": {
+                        "UniqueID": 25, 
+                        "Indices": {
+                          "Array": { 
+                            "Uint16Array": { 
+                              "File": "model_file.bin.gz",
+                              "Size": 4,
+                              "Offset": 1376
+                            }
+                          }, 
+                          "ItemSize": 1, 
+                          "Type": "ELEMENT_ARRAY_BUFFER"
+                        }, 
+                        "Mode": "TRIANGLE_STRIP"
+                      }
+                    } ], 
+                    "VertexAttributeList": {
+                      "Normal": {
+                        "UniqueID": 22, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 4,
+                            "Offset": 1384
+                          }
+                        }, 
+                        "ItemSize": 3, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "Tangent": {
+                        "UniqueID": 24, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 4,
+                            "Offset": 1432
+                          }
+                        }, 
+                        "ItemSize": 4, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "TexCoord0": {
+                        "UniqueID": 23, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 4,
+                            "Offset": 1496
+                          }
+                        }, 
+                        "ItemSize": 2, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "Vertex": {
+                        "UniqueID": 21, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 4,
+                            "Offset": 1528
+                          }
+                        }, 
+                        "ItemSize": 3, 
+                        "Type": "ARRAY_BUFFER"
+                      }
+                    }
+                  }
+                } ]
+              }
+            } ]
+          }
+        },
+        {
+          "osg.MatrixTransform": {
+            "UniqueID": 26, 
+            "Name": "Plane.001", 
+            "Matrix": [ 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.00572, -0.07637, 1.12593, 1 ], 
+            "Children": [ {
+              "osg.Node": {
+                "UniqueID": 27, 
+                "Name": "GeodePlane.001", 
+                "Children": [ {
+                  "osg.Geometry": {
+                    "UniqueID": 28, 
+                    "Name": "Plane.001", 
+                    "StateSet": {
+                      "osg.StateSet": {
+                        "UniqueID": 29, 
+                        "Name": "logo", 
+                        "AttributeList": [ {
+                          "osg.Material": {
+                            "UniqueID": 31, 
+                            "Name": "logo", 
+                            "Ambient": [ 0, 0, 0, 1], 
+                            "Diffuse": [ 0.64, 0.64, 0.64, 1], 
+                            "Emission": [ 0, 0, 0, 1], 
+                            "Shininess": 12.5, 
+                            "Specular": [ 0.5, 0.5, 0.5, 1], 
+                            "UserDataContainer": {
+                              "UniqueID": 32, 
+                              "Values": [ {
+                                "Name": "source", 
+                                "Value": "blender"
+                              },
+                              {
+                                "Name": "DiffuseIntensity", 
+                                "Value": "0.800000011920929"
+                              },
+                              {
+                                "Name": "DiffuseColor", 
+                                "Value": "[ 0.800000, 0.800000, 0.800000 ]"
+                              },
+                              {
+                                "Name": "SpecularIntensity", 
+                                "Value": "0.5"
+                              },
+                              {
+                                "Name": "SpecularColor", 
+                                "Value": "[ 1.000000, 1.000000, 1.000000 ]"
+                              },
+                              {
+                                "Name": "SpecularHardness", 
+                                "Value": "50"
+                              },
+                              {
+                                "Name": "Emit", 
+                                "Value": "0.0"
+                              },
+                              {
+                                "Name": "Ambient", 
+                                "Value": "1.0"
+                              },
+                              {
+                                "Name": "Translucency", 
+                                "Value": "0.0"
+                              },
+                              {
+                                "Name": "DiffuseShader", 
+                                "Value": "LAMBERT"
+                              },
+                              {
+                                "Name": "SpecularShader", 
+                                "Value": "COOKTORR"
+                              } ]
+                            }
+                          }
+                        } ], 
+                        "UserDataContainer": {
+                          "UniqueID": 30, 
+                          "Values": [ {
+                            "Name": "source", 
+                            "Value": "blender"
+                          },
+                          {
+                            "Name": "00_UsePremultiplyAlpha", 
+                            "Value": "false"
+                          },
+                          {
+                            "Name": "00_UseAlpha", 
+                            "Value": "true"
+                          },
+                          {
+                            "Name": "00_DiffuseColor", 
+                            "Value": "1.0"
+                          },
+                          {
+                            "Name": "00_BlendType", 
+                            "Value": "MIX"
+                          } ]
+                        }
+                      }
+                    }, 
+                    "PrimitiveSetList": [ {
+                      "DrawElementsUShort": {
+                        "UniqueID": 37, 
+                        "Indices": {
+                          "Array": { 
+                            "Uint16Array": { 
+                              "File": "model_file.bin.gz",
+                              "Size": 4,
+                              "Offset": 1576
+                            }
+                          }, 
+                          "ItemSize": 1, 
+                          "Type": "ELEMENT_ARRAY_BUFFER"
+                        }, 
+                        "Mode": "TRIANGLE_STRIP"
+                      }
+                    } ], 
+                    "VertexAttributeList": {
+                      "Normal": {
+                        "UniqueID": 34, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 4,
+                            "Offset": 1584
+                          }
+                        }, 
+                        "ItemSize": 3, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "Tangent": {
+                        "UniqueID": 36, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 4,
+                            "Offset": 1632
+                          }
+                        }, 
+                        "ItemSize": 4, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "TexCoord0": {
+                        "UniqueID": 35, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 4,
+                            "Offset": 1696
+                          }
+                        }, 
+                        "ItemSize": 2, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "Vertex": {
+                        "UniqueID": 33, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 4,
+                            "Offset": 1728
+                          }
+                        }, 
+                        "ItemSize": 3, 
+                        "Type": "ARRAY_BUFFER"
+                      }
+                    }
+                  }
+                } ]
+              }
+            } ]
+          }
+        },
+        {
+          "osg.MatrixTransform": {
+            "UniqueID": 38, 
+            "Name": "Cube.003", 
+            "Matrix": [ 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0.10262, 0.11466, 1 ], 
+            "Children": [ {
+              "osg.Node": {
+                "UniqueID": 39, 
+                "Name": "GeodeMesh.001", 
+                "Children": [ {
+                  "osg.Geometry": {
+                    "UniqueID": 40, 
+                    "Name": "Cube.003", 
+                    "StateSet": {
+                      "osg.StateSet": {
+                        "UniqueID": 6
+                      }
+                    }, 
+                    "PrimitiveSetList": [ {
+                      "DrawElementsUShort": {
+                        "UniqueID": 43, 
+                        "Indices": {
+                          "Array": { 
+                            "Uint16Array": { 
+                              "File": "model_file.bin.gz",
+                              "Size": 42,
+                              "Offset": 1776
+                            }
+                          }, 
+                          "ItemSize": 1, 
+                          "Type": "ELEMENT_ARRAY_BUFFER"
+                        }, 
+                        "Mode": "TRIANGLES"
+                      }
+                    },
+                    {
+                      "DrawElementsUShort": {
+                        "UniqueID": 44, 
+                        "Indices": {
+                          "Array": { 
+                            "Uint16Array": { 
+                              "File": "model_file.bin.gz",
+                              "Size": 38,
+                              "Offset": 1860
+                            }
+                          }, 
+                          "ItemSize": 1, 
+                          "Type": "ELEMENT_ARRAY_BUFFER"
+                        }, 
+                        "Mode": "TRIANGLE_STRIP"
+                      }
+                    } ], 
+                    "VertexAttributeList": {
+                      "Normal": {
+                        "UniqueID": 42, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 55,
+                            "Offset": 1936
+                          }
+                        }, 
+                        "ItemSize": 3, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "Vertex": {
+                        "UniqueID": 41, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 55,
+                            "Offset": 2596
+                          }
+                        }, 
+                        "ItemSize": 3, 
+                        "Type": "ARRAY_BUFFER"
+                      }
+                    }
+                  }
+                } ]
+              }
+            } ]
+          }
+        },
+        {
+          "osg.MatrixTransform": {
+            "UniqueID": 45, 
+            "Name": "Cube", 
+            "Matrix": [ 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0.10262, 0.11466, 1 ], 
+            "Children": [ {
+              "osg.Node": {
+                "UniqueID": 46, 
+                "Name": "GeodeMesh.002", 
+                "Children": [ {
+                  "osg.Geometry": {
+                    "UniqueID": 47, 
+                    "Name": "Cube", 
+                    "StateSet": {
+                      "osg.StateSet": {
+                        "UniqueID": 48, 
+                        "Name": "coque", 
+                        "AttributeList": [ {
+                          "osg.Material": {
+                            "UniqueID": 50, 
+                            "Name": "coque", 
+                            "Ambient": [ 0, 0, 0, 1], 
+                            "Diffuse": [ 0.64, 0.64, 0.64, 1], 
+                            "Emission": [ 0, 0, 0, 1], 
+                            "Shininess": 12.5, 
+                            "Specular": [ 0.5, 0.5, 0.5, 1], 
+                            "UserDataContainer": {
+                              "UniqueID": 51, 
+                              "Values": [ {
+                                "Name": "source", 
+                                "Value": "blender"
+                              },
+                              {
+                                "Name": "DiffuseIntensity", 
+                                "Value": "0.800000011920929"
+                              },
+                              {
+                                "Name": "DiffuseColor", 
+                                "Value": "[ 0.800000, 0.800000, 0.800000 ]"
+                              },
+                              {
+                                "Name": "SpecularIntensity", 
+                                "Value": "0.5"
+                              },
+                              {
+                                "Name": "SpecularColor", 
+                                "Value": "[ 1.000000, 1.000000, 1.000000 ]"
+                              },
+                              {
+                                "Name": "SpecularHardness", 
+                                "Value": "50"
+                              },
+                              {
+                                "Name": "Emit", 
+                                "Value": "0.0"
+                              },
+                              {
+                                "Name": "Ambient", 
+                                "Value": "1.0"
+                              },
+                              {
+                                "Name": "Translucency", 
+                                "Value": "0.0"
+                              },
+                              {
+                                "Name": "DiffuseShader", 
+                                "Value": "LAMBERT"
+                              },
+                              {
+                                "Name": "SpecularShader", 
+                                "Value": "COOKTORR"
+                              } ]
+                            }
+                          }
+                        } ], 
+                        "UserDataContainer": {
+                          "UniqueID": 49, 
+                          "Values": [ {
+                            "Name": "source", 
+                            "Value": "blender"
+                          },
+                          {
+                            "Name": "00_UsePremultiplyAlpha", 
+                            "Value": "false"
+                          },
+                          {
+                            "Name": "00_UseAlpha", 
+                            "Value": "true"
+                          },
+                          {
+                            "Name": "00_DiffuseColor", 
+                            "Value": "1.0"
+                          },
+                          {
+                            "Name": "00_UsePremultiplyAlpha", 
+                            "Value": "false"
+                          },
+                          {
+                            "Name": "00_UseAlpha", 
+                            "Value": "true"
+                          },
+                          {
+                            "Name": "00_SpecularColor", 
+                            "Value": "1.0"
+                          },
+                          {
+                            "Name": "00_BlendType", 
+                            "Value": "MULTIPLY"
+                          } ]
+                        }
+                      }
+                    }, 
+                    "PrimitiveSetList": [ {
+                      "DrawElementsUShort": {
+                        "UniqueID": 56, 
+                        "Indices": {
+                          "Array": { 
+                            "Uint16Array": { 
+                              "File": "model_file.bin.gz",
+                              "Size": 3840,
+                              "Offset": 3256
+                            }
+                          }, 
+                          "ItemSize": 1, 
+                          "Type": "ELEMENT_ARRAY_BUFFER"
+                        }, 
+                        "Mode": "TRIANGLES"
+                      }
+                    },
+                    {
+                      "DrawElementsUShort": {
+                        "UniqueID": 57, 
+                        "Indices": {
+                          "Array": { 
+                            "Uint16Array": { 
+                              "File": "model_file.bin.gz",
+                              "Size": 81153,
+                              "Offset": 10936
+                            }
+                          }, 
+                          "ItemSize": 1, 
+                          "Type": "ELEMENT_ARRAY_BUFFER"
+                        }, 
+                        "Mode": "TRIANGLE_STRIP"
+                      }
+                    } ], 
+                    "VertexAttributeList": {
+                      "Normal": {
+                        "UniqueID": 53, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 27134,
+                            "Offset": 173244
+                          }
+                        }, 
+                        "ItemSize": 3, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "Tangent": {
+                        "UniqueID": 55, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 27134,
+                            "Offset": 498852
+                          }
+                        }, 
+                        "ItemSize": 4, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "TexCoord0": {
+                        "UniqueID": 54, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 27134,
+                            "Offset": 932996
+                          }
+                        }, 
+                        "ItemSize": 2, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "Vertex": {
+                        "UniqueID": 52, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 27134,
+                            "Offset": 1150068
+                          }
+                        }, 
+                        "ItemSize": 3, 
+                        "Type": "ARRAY_BUFFER"
+                      }
+                    }
+                  }
+                },
+                {
+                  "osg.Geometry": {
+                    "UniqueID": 58, 
+                    "Name": "Cube", 
+                    "StateSet": {
+                      "osg.StateSet": {
+                        "UniqueID": 59, 
+                        "Name": "shiny", 
+                        "AttributeList": [ {
+                          "osg.Material": {
+                            "UniqueID": 61, 
+                            "Name": "shiny", 
+                            "Ambient": [ 0, 0, 0, 1], 
+                            "Diffuse": [ 0.8, 0.8, 0.8, 1], 
+                            "Emission": [ 0, 0, 0, 1], 
+                            "Shininess": 12.5, 
+                            "Specular": [ 0.5, 0.5, 0.5, 1], 
+                            "UserDataContainer": {
+                              "UniqueID": 62, 
+                              "Values": [ {
+                                "Name": "source", 
+                                "Value": "blender"
+                              },
+                              {
+                                "Name": "DiffuseIntensity", 
+                                "Value": "0.800000011920929"
+                              },
+                              {
+                                "Name": "DiffuseColor", 
+                                "Value": "[ 1.000000, 1.000000, 1.000000 ]"
+                              },
+                              {
+                                "Name": "SpecularIntensity", 
+                                "Value": "0.5"
+                              },
+                              {
+                                "Name": "SpecularColor", 
+                                "Value": "[ 1.000000, 1.000000, 1.000000 ]"
+                              },
+                              {
+                                "Name": "SpecularHardness", 
+                                "Value": "50"
+                              },
+                              {
+                                "Name": "Emit", 
+                                "Value": "0.0"
+                              },
+                              {
+                                "Name": "Ambient", 
+                                "Value": "1.0"
+                              },
+                              {
+                                "Name": "Translucency", 
+                                "Value": "0.0"
+                              },
+                              {
+                                "Name": "DiffuseShader", 
+                                "Value": "LAMBERT"
+                              },
+                              {
+                                "Name": "SpecularShader", 
+                                "Value": "COOKTORR"
+                              } ]
+                            }
+                          }
+                        } ], 
+                        "UserDataContainer": {
+                          "UniqueID": 60, 
+                          "Values": [ {
+                            "Name": "source", 
+                            "Value": "blender"
+                          },
+                          {
+                            "Name": "00_UsePremultiplyAlpha", 
+                            "Value": "false"
+                          },
+                          {
+                            "Name": "00_UseAlpha", 
+                            "Value": "true"
+                          },
+                          {
+                            "Name": "00_DiffuseColor", 
+                            "Value": "1.0"
+                          },
+                          {
+                            "Name": "00_UsePremultiplyAlpha", 
+                            "Value": "false"
+                          },
+                          {
+                            "Name": "00_UseAlpha", 
+                            "Value": "true"
+                          },
+                          {
+                            "Name": "00_SpecularColor", 
+                            "Value": "1.0"
+                          },
+                          {
+                            "Name": "00_BlendType", 
+                            "Value": "MULTIPLY"
+                          } ]
+                        }
+                      }
+                    }, 
+                    "PrimitiveSetList": [ {
+                      "DrawElementsUShort": {
+                        "UniqueID": 67, 
+                        "Indices": {
+                          "Array": { 
+                            "Uint16Array": { 
+                              "File": "model_file.bin.gz",
+                              "Size": 2196,
+                              "Offset": 1475676
+                            }
+                          }, 
+                          "ItemSize": 1, 
+                          "Type": "ELEMENT_ARRAY_BUFFER"
+                        }, 
+                        "Mode": "TRIANGLES"
+                      }
+                    },
+                    {
+                      "DrawElementsUShort": {
+                        "UniqueID": 68, 
+                        "Indices": {
+                          "Array": { 
+                            "Uint16Array": { 
+                              "File": "model_file.bin.gz",
+                              "Size": 38687,
+                              "Offset": 1480068
+                            }
+                          }, 
+                          "ItemSize": 1, 
+                          "Type": "ELEMENT_ARRAY_BUFFER"
+                        }, 
+                        "Mode": "TRIANGLE_STRIP"
+                      }
+                    } ], 
+                    "VertexAttributeList": {
+                      "Normal": {
+                        "UniqueID": 64, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 12296,
+                            "Offset": 1557444
+                          }
+                        }, 
+                        "ItemSize": 3, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "Tangent": {
+                        "UniqueID": 66, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 12296,
+                            "Offset": 1704996
+                          }
+                        }, 
+                        "ItemSize": 4, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "TexCoord0": {
+                        "UniqueID": 65, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 12296,
+                            "Offset": 1901732
+                          }
+                        }, 
+                        "ItemSize": 2, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "Vertex": {
+                        "UniqueID": 63, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 12296,
+                            "Offset": 2000100
+                          }
+                        }, 
+                        "ItemSize": 3, 
+                        "Type": "ARRAY_BUFFER"
+                      }
+                    }
+                  }
+                },
+                {
+                  "osg.Geometry": {
+                    "UniqueID": 69, 
+                    "Name": "Cube", 
+                    "StateSet": {
+                      "osg.StateSet": {
+                        "UniqueID": 70, 
+                        "Name": "details", 
+                        "AttributeList": [ {
+                          "osg.Material": {
+                            "UniqueID": 72, 
+                            "Name": "details", 
+                            "Ambient": [ 0, 0, 0, 1], 
+                            "Diffuse": [ 0.22311, 0.22311, 0.22311, 1], 
+                            "Emission": [ 0, 0, 0, 1], 
+                            "Shininess": 12.5, 
+                            "Specular": [ 0.5, 0.5, 0.5, 1], 
+                            "UserDataContainer": {
+                              "UniqueID": 73, 
+                              "Values": [ {
+                                "Name": "source", 
+                                "Value": "blender"
+                              },
+                              {
+                                "Name": "DiffuseIntensity", 
+                                "Value": "0.800000011920929"
+                              },
+                              {
+                                "Name": "DiffuseColor", 
+                                "Value": "[ 0.278888, 0.278888, 0.278888 ]"
+                              },
+                              {
+                                "Name": "SpecularIntensity", 
+                                "Value": "0.5"
+                              },
+                              {
+                                "Name": "SpecularColor", 
+                                "Value": "[ 1.000000, 1.000000, 1.000000 ]"
+                              },
+                              {
+                                "Name": "SpecularHardness", 
+                                "Value": "50"
+                              },
+                              {
+                                "Name": "Emit", 
+                                "Value": "0.0"
+                              },
+                              {
+                                "Name": "Ambient", 
+                                "Value": "1.0"
+                              },
+                              {
+                                "Name": "Translucency", 
+                                "Value": "0.0"
+                              },
+                              {
+                                "Name": "DiffuseShader", 
+                                "Value": "LAMBERT"
+                              },
+                              {
+                                "Name": "SpecularShader", 
+                                "Value": "COOKTORR"
+                              } ]
+                            }
+                          }
+                        } ], 
+                        "UserDataContainer": {
+                          "UniqueID": 71, 
+                          "Values": [ {
+                            "Name": "source", 
+                            "Value": "blender"
+                          },
+                          {
+                            "Name": "00_UsePremultiplyAlpha", 
+                            "Value": "false"
+                          },
+                          {
+                            "Name": "00_UseAlpha", 
+                            "Value": "true"
+                          },
+                          {
+                            "Name": "00_DiffuseColor", 
+                            "Value": "1.0"
+                          },
+                          {
+                            "Name": "00_UsePremultiplyAlpha", 
+                            "Value": "false"
+                          },
+                          {
+                            "Name": "00_UseAlpha", 
+                            "Value": "true"
+                          },
+                          {
+                            "Name": "00_SpecularColor", 
+                            "Value": "1.0"
+                          },
+                          {
+                            "Name": "00_BlendType", 
+                            "Value": "MULTIPLY"
+                          } ]
+                        }
+                      }
+                    }, 
+                    "PrimitiveSetList": [ {
+                      "DrawElementsUShort": {
+                        "UniqueID": 78, 
+                        "Indices": {
+                          "Array": { 
+                            "Uint16Array": { 
+                              "File": "model_file.bin.gz",
+                              "Size": 294,
+                              "Offset": 2147652
+                            }
+                          }, 
+                          "ItemSize": 1, 
+                          "Type": "ELEMENT_ARRAY_BUFFER"
+                        }, 
+                        "Mode": "TRIANGLES"
+                      }
+                    },
+                    {
+                      "DrawElementsUShort": {
+                        "UniqueID": 79, 
+                        "Indices": {
+                          "Array": { 
+                            "Uint16Array": { 
+                              "File": "model_file.bin.gz",
+                              "Size": 10563,
+                              "Offset": 2148240
+                            }
+                          }, 
+                          "ItemSize": 1, 
+                          "Type": "ELEMENT_ARRAY_BUFFER"
+                        }, 
+                        "Mode": "TRIANGLE_STRIP"
+                      }
+                    } ], 
+                    "VertexAttributeList": {
+                      "Normal": {
+                        "UniqueID": 75, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 3674,
+                            "Offset": 2169368
+                          }
+                        }, 
+                        "ItemSize": 3, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "Tangent": {
+                        "UniqueID": 77, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 3674,
+                            "Offset": 2213456
+                          }
+                        }, 
+                        "ItemSize": 4, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "TexCoord0": {
+                        "UniqueID": 76, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 3674,
+                            "Offset": 2272240
+                          }
+                        }, 
+                        "ItemSize": 2, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "Vertex": {
+                        "UniqueID": 74, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 3674,
+                            "Offset": 2301632
+                          }
+                        }, 
+                        "ItemSize": 3, 
+                        "Type": "ARRAY_BUFFER"
+                      }
+                    }
+                  }
+                },
+                {
+                  "osg.Geometry": {
+                    "UniqueID": 80, 
+                    "Name": "Cube", 
+                    "StateSet": {
+                      "osg.StateSet": {
+                        "UniqueID": 81, 
+                        "Name": "screen", 
+                        "AttributeList": [ {
+                          "osg.Material": {
+                            "UniqueID": 83, 
+                            "Name": "screen", 
+                            "Ambient": [ 0, 0, 0, 1], 
+                            "Diffuse": [ 0.64, 0.64, 0.64, 1], 
+                            "Emission": [ 0, 0, 0, 1], 
+                            "Shininess": 12.5, 
+                            "Specular": [ 0.5, 0.5, 0.5, 1], 
+                            "UserDataContainer": {
+                              "UniqueID": 84, 
+                              "Values": [ {
+                                "Name": "source", 
+                                "Value": "blender"
+                              },
+                              {
+                                "Name": "DiffuseIntensity", 
+                                "Value": "0.800000011920929"
+                              },
+                              {
+                                "Name": "DiffuseColor", 
+                                "Value": "[ 0.800000, 0.800000, 0.800000 ]"
+                              },
+                              {
+                                "Name": "SpecularIntensity", 
+                                "Value": "0.5"
+                              },
+                              {
+                                "Name": "SpecularColor", 
+                                "Value": "[ 1.000000, 1.000000, 1.000000 ]"
+                              },
+                              {
+                                "Name": "SpecularHardness", 
+                                "Value": "50"
+                              },
+                              {
+                                "Name": "Emit", 
+                                "Value": "0.0"
+                              },
+                              {
+                                "Name": "Ambient", 
+                                "Value": "1.0"
+                              },
+                              {
+                                "Name": "Translucency", 
+                                "Value": "0.0"
+                              },
+                              {
+                                "Name": "DiffuseShader", 
+                                "Value": "LAMBERT"
+                              },
+                              {
+                                "Name": "SpecularShader", 
+                                "Value": "COOKTORR"
+                              } ]
+                            }
+                          }
+                        } ], 
+                        "UserDataContainer": {
+                          "UniqueID": 82, 
+                          "Values": [ {
+                            "Name": "source", 
+                            "Value": "blender"
+                          } ]
+                        }
+                      }
+                    }, 
+                    "PrimitiveSetList": [ {
+                      "DrawElementsUShort": {
+                        "UniqueID": 89, 
+                        "Indices": {
+                          "Array": { 
+                            "Uint16Array": { 
+                              "File": "model_file.bin.gz",
+                              "Size": 870,
+                              "Offset": 2345720
+                            }
+                          }, 
+                          "ItemSize": 1, 
+                          "Type": "ELEMENT_ARRAY_BUFFER"
+                        }, 
+                        "Mode": "TRIANGLES"
+                      }
+                    },
+                    {
+                      "DrawElementsUShort": {
+                        "UniqueID": 90, 
+                        "Indices": {
+                          "Array": { 
+                            "Uint16Array": { 
+                              "File": "model_file.bin.gz",
+                              "Size": 18635,
+                              "Offset": 2347460
+                            }
+                          }, 
+                          "ItemSize": 1, 
+                          "Type": "ELEMENT_ARRAY_BUFFER"
+                        }, 
+                        "Mode": "TRIANGLE_STRIP"
+                      }
+                    } ], 
+                    "VertexAttributeList": {
+                      "Normal": {
+                        "UniqueID": 86, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 5733,
+                            "Offset": 2384732
+                          }
+                        }, 
+                        "ItemSize": 3, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "Tangent": {
+                        "UniqueID": 88, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 5733,
+                            "Offset": 2453528
+                          }
+                        }, 
+                        "ItemSize": 4, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "TexCoord0": {
+                        "UniqueID": 87, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 5733,
+                            "Offset": 2545256
+                          }
+                        }, 
+                        "ItemSize": 2, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "Vertex": {
+                        "UniqueID": 85, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 5733,
+                            "Offset": 2591120
+                          }
+                        }, 
+                        "ItemSize": 3, 
+                        "Type": "ARRAY_BUFFER"
+                      }
+                    }
+                  }
+                },
+                {
+                  "osg.Geometry": {
+                    "UniqueID": 91, 
+                    "Name": "Cube", 
+                    "StateSet": {
+                      "osg.StateSet": {
+                        "UniqueID": 92, 
+                        "Name": "Lens", 
+                        "AttributeList": [ {
+                          "osg.Material": {
+                            "UniqueID": 94, 
+                            "Name": "Lens", 
+                            "Ambient": [ 0, 0, 0, 1], 
+                            "Diffuse": [ 0.18187, 0.30841, 0.49916, 1], 
+                            "Emission": [ 0, 0, 0, 1], 
+                            "Shininess": 12.5, 
+                            "Specular": [ 0.5, 0.5, 0.5, 1], 
+                            "UserDataContainer": {
+                              "UniqueID": 95, 
+                              "Values": [ {
+                                "Name": "source", 
+                                "Value": "blender"
+                              },
+                              {
+                                "Name": "DiffuseIntensity", 
+                                "Value": "0.800000011920929"
+                              },
+                              {
+                                "Name": "DiffuseColor", 
+                                "Value": "[ 0.227343, 0.385507, 0.623950 ]"
+                              },
+                              {
+                                "Name": "SpecularIntensity", 
+                                "Value": "0.5"
+                              },
+                              {
+                                "Name": "SpecularColor", 
+                                "Value": "[ 1.000000, 1.000000, 1.000000 ]"
+                              },
+                              {
+                                "Name": "SpecularHardness", 
+                                "Value": "50"
+                              },
+                              {
+                                "Name": "Emit", 
+                                "Value": "0.0"
+                              },
+                              {
+                                "Name": "Ambient", 
+                                "Value": "1.0"
+                              },
+                              {
+                                "Name": "Translucency", 
+                                "Value": "0.0"
+                              },
+                              {
+                                "Name": "DiffuseShader", 
+                                "Value": "LAMBERT"
+                              },
+                              {
+                                "Name": "SpecularShader", 
+                                "Value": "COOKTORR"
+                              } ]
+                            }
+                          }
+                        } ], 
+                        "UserDataContainer": {
+                          "UniqueID": 93, 
+                          "Values": [ {
+                            "Name": "source", 
+                            "Value": "blender"
+                          },
+                          {
+                            "Name": "00_UsePremultiplyAlpha", 
+                            "Value": "false"
+                          },
+                          {
+                            "Name": "00_UseAlpha", 
+                            "Value": "true"
+                          },
+                          {
+                            "Name": "00_DiffuseColor", 
+                            "Value": "1.0"
+                          },
+                          {
+                            "Name": "00_UsePremultiplyAlpha", 
+                            "Value": "false"
+                          },
+                          {
+                            "Name": "00_UseAlpha", 
+                            "Value": "true"
+                          },
+                          {
+                            "Name": "00_SpecularColor", 
+                            "Value": "1.0"
+                          },
+                          {
+                            "Name": "00_BlendType", 
+                            "Value": "MULTIPLY"
+                          } ]
+                        }
+                      }
+                    }, 
+                    "PrimitiveSetList": [ {
+                      "DrawElementsUShort": {
+                        "UniqueID": 100, 
+                        "Indices": {
+                          "Array": { 
+                            "Uint16Array": { 
+                              "File": "model_file.bin.gz",
+                              "Size": 39,
+                              "Offset": 2659916
+                            }
+                          }, 
+                          "ItemSize": 1, 
+                          "Type": "ELEMENT_ARRAY_BUFFER"
+                        }, 
+                        "Mode": "TRIANGLES"
+                      }
+                    },
+                    {
+                      "DrawElementsUShort": {
+                        "UniqueID": 101, 
+                        "Indices": {
+                          "Array": { 
+                            "Uint16Array": { 
+                              "File": "model_file.bin.gz",
+                              "Size": 1636,
+                              "Offset": 2659996
+                            }
+                          }, 
+                          "ItemSize": 1, 
+                          "Type": "ELEMENT_ARRAY_BUFFER"
+                        }, 
+                        "Mode": "TRIANGLE_STRIP"
+                      }
+                    } ], 
+                    "VertexAttributeList": {
+                      "Normal": {
+                        "UniqueID": 97, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 562,
+                            "Offset": 2663268
+                          }
+                        }, 
+                        "ItemSize": 3, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "Tangent": {
+                        "UniqueID": 99, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 562,
+                            "Offset": 2670012
+                          }
+                        }, 
+                        "ItemSize": 4, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "TexCoord0": {
+                        "UniqueID": 98, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 562,
+                            "Offset": 2679004
+                          }
+                        }, 
+                        "ItemSize": 2, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "Vertex": {
+                        "UniqueID": 96, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 562,
+                            "Offset": 2683500
+                          }
+                        }, 
+                        "ItemSize": 3, 
+                        "Type": "ARRAY_BUFFER"
+                      }
+                    }
+                  }
+                },
+                {
+                  "osg.Geometry": {
+                    "UniqueID": 102, 
+                    "Name": "Cube", 
+                    "StateSet": {
+                      "osg.StateSet": {
+                        "UniqueID": 103, 
+                        "Name": "metal", 
+                        "AttributeList": [ {
+                          "osg.Material": {
+                            "UniqueID": 105, 
+                            "Name": "metal", 
+                            "Ambient": [ 0, 0, 0, 1], 
+                            "Diffuse": [ 0.21952, 0.21952, 0.21952, 1], 
+                            "Emission": [ 0, 0, 0, 1], 
+                            "Shininess": 12.5, 
+                            "Specular": [ 0.5, 0.5, 0.5, 1], 
+                            "UserDataContainer": {
+                              "UniqueID": 106, 
+                              "Values": [ {
+                                "Name": "source", 
+                                "Value": "blender"
+                              },
+                              {
+                                "Name": "DiffuseIntensity", 
+                                "Value": "1.0"
+                              },
+                              {
+                                "Name": "DiffuseColor", 
+                                "Value": "[ 0.219521, 0.219521, 0.219521 ]"
+                              },
+                              {
+                                "Name": "SpecularIntensity", 
+                                "Value": "0.5"
+                              },
+                              {
+                                "Name": "SpecularColor", 
+                                "Value": "[ 1.000000, 1.000000, 1.000000 ]"
+                              },
+                              {
+                                "Name": "SpecularHardness", 
+                                "Value": "50"
+                              },
+                              {
+                                "Name": "Emit", 
+                                "Value": "0.0"
+                              },
+                              {
+                                "Name": "Ambient", 
+                                "Value": "1.0"
+                              },
+                              {
+                                "Name": "Translucency", 
+                                "Value": "0.0"
+                              },
+                              {
+                                "Name": "DiffuseShader", 
+                                "Value": "LAMBERT"
+                              },
+                              {
+                                "Name": "SpecularShader", 
+                                "Value": "COOKTORR"
+                              } ]
+                            }
+                          }
+                        } ], 
+                        "UserDataContainer": {
+                          "UniqueID": 104, 
+                          "Values": [ {
+                            "Name": "source", 
+                            "Value": "blender"
+                          },
+                          {
+                            "Name": "00_UsePremultiplyAlpha", 
+                            "Value": "false"
+                          },
+                          {
+                            "Name": "00_UseAlpha", 
+                            "Value": "true"
+                          },
+                          {
+                            "Name": "00_DiffuseColor", 
+                            "Value": "1.0"
+                          },
+                          {
+                            "Name": "00_UsePremultiplyAlpha", 
+                            "Value": "false"
+                          },
+                          {
+                            "Name": "00_UseAlpha", 
+                            "Value": "true"
+                          },
+                          {
+                            "Name": "00_SpecularColor", 
+                            "Value": "1.0"
+                          },
+                          {
+                            "Name": "00_BlendType", 
+                            "Value": "MULTIPLY"
+                          } ]
+                        }
+                      }
+                    }, 
+                    "PrimitiveSetList": [ {
+                      "DrawElementsUShort": {
+                        "UniqueID": 111, 
+                        "Indices": {
+                          "Array": { 
+                            "Uint16Array": { 
+                              "File": "model_file.bin.gz",
+                              "Size": 51,
+                              "Offset": 2690244
+                            }
+                          }, 
+                          "ItemSize": 1, 
+                          "Type": "ELEMENT_ARRAY_BUFFER"
+                        }, 
+                        "Mode": "TRIANGLES"
+                      }
+                    },
+                    {
+                      "DrawElementsUShort": {
+                        "UniqueID": 112, 
+                        "Indices": {
+                          "Array": { 
+                            "Uint16Array": { 
+                              "File": "model_file.bin.gz",
+                              "Size": 2916,
+                              "Offset": 2690348
+                            }
+                          }, 
+                          "ItemSize": 1, 
+                          "Type": "ELEMENT_ARRAY_BUFFER"
+                        }, 
+                        "Mode": "TRIANGLE_STRIP"
+                      }
+                    } ], 
+                    "VertexAttributeList": {
+                      "Normal": {
+                        "UniqueID": 108, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 1648,
+                            "Offset": 2696180
+                          }
+                        }, 
+                        "ItemSize": 3, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "Tangent": {
+                        "UniqueID": 110, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 1648,
+                            "Offset": 2715956
+                          }
+                        }, 
+                        "ItemSize": 4, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "TexCoord0": {
+                        "UniqueID": 109, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 1648,
+                            "Offset": 2742324
+                          }
+                        }, 
+                        "ItemSize": 2, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "Vertex": {
+                        "UniqueID": 107, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 1648,
+                            "Offset": 2755508
+                          }
+                        }, 
+                        "ItemSize": 3, 
+                        "Type": "ARRAY_BUFFER"
+                      }
+                    }
+                  }
+                },
+                {
+                  "osg.Geometry": {
+                    "UniqueID": 113, 
+                    "Name": "Cube", 
+                    "StateSet": {
+                      "osg.StateSet": {
+                        "UniqueID": 114, 
+                        "Name": "flash", 
+                        "AttributeList": [ {
+                          "osg.Material": {
+                            "UniqueID": 116, 
+                            "Name": "flash", 
+                            "Ambient": [ 0, 0, 0, 1], 
+                            "Diffuse": [ 0.64, 0.64, 0.64, 1], 
+                            "Emission": [ 0, 0, 0, 1], 
+                            "Shininess": 12.5, 
+                            "Specular": [ 0.5, 0.5, 0.5, 1], 
+                            "UserDataContainer": {
+                              "UniqueID": 117, 
+                              "Values": [ {
+                                "Name": "source", 
+                                "Value": "blender"
+                              },
+                              {
+                                "Name": "DiffuseIntensity", 
+                                "Value": "0.800000011920929"
+                              },
+                              {
+                                "Name": "DiffuseColor", 
+                                "Value": "[ 0.800000, 0.800000, 0.800000 ]"
+                              },
+                              {
+                                "Name": "SpecularIntensity", 
+                                "Value": "0.5"
+                              },
+                              {
+                                "Name": "SpecularColor", 
+                                "Value": "[ 1.000000, 1.000000, 1.000000 ]"
+                              },
+                              {
+                                "Name": "SpecularHardness", 
+                                "Value": "50"
+                              },
+                              {
+                                "Name": "Emit", 
+                                "Value": "0.0"
+                              },
+                              {
+                                "Name": "Ambient", 
+                                "Value": "1.0"
+                              },
+                              {
+                                "Name": "Translucency", 
+                                "Value": "0.0"
+                              },
+                              {
+                                "Name": "DiffuseShader", 
+                                "Value": "LAMBERT"
+                              },
+                              {
+                                "Name": "SpecularShader", 
+                                "Value": "COOKTORR"
+                              } ]
+                            }
+                          }
+                        } ], 
+                        "UserDataContainer": {
+                          "UniqueID": 115, 
+                          "Values": [ {
+                            "Name": "source", 
+                            "Value": "blender"
+                          },
+                          {
+                            "Name": "00_UsePremultiplyAlpha", 
+                            "Value": "false"
+                          },
+                          {
+                            "Name": "00_UseAlpha", 
+                            "Value": "true"
+                          },
+                          {
+                            "Name": "00_Normal", 
+                            "Value": "0.2207794189453125"
+                          },
+                          {
+                            "Name": "00_BlendType", 
+                            "Value": "MIX"
+                          },
+                          {
+                            "Name": "01_UsePremultiplyAlpha", 
+                            "Value": "false"
+                          },
+                          {
+                            "Name": "01_UseAlpha", 
+                            "Value": "true"
+                          },
+                          {
+                            "Name": "01_DiffuseColor", 
+                            "Value": "1.0"
+                          },
+                          {
+                            "Name": "01_UsePremultiplyAlpha", 
+                            "Value": "false"
+                          },
+                          {
+                            "Name": "01_UseAlpha", 
+                            "Value": "true"
+                          },
+                          {
+                            "Name": "01_SpecularColor", 
+                            "Value": "1.0"
+                          },
+                          {
+                            "Name": "01_BlendType", 
+                            "Value": "MULTIPLY"
+                          } ]
+                        }
+                      }
+                    }, 
+                    "PrimitiveSetList": [ {
+                      "DrawElementsUShort": {
+                        "UniqueID": 123, 
+                        "Indices": {
+                          "Array": { 
+                            "Uint16Array": { 
+                              "File": "model_file.bin.gz",
+                              "Size": 45,
+                              "Offset": 2775284
+                            }
+                          }, 
+                          "ItemSize": 1, 
+                          "Type": "ELEMENT_ARRAY_BUFFER"
+                        }, 
+                        "Mode": "TRIANGLES"
+                      }
+                    },
+                    {
+                      "DrawElementsUShort": {
+                        "UniqueID": 124, 
+                        "Indices": {
+                          "Array": { 
+                            "Uint16Array": { 
+                              "File": "model_file.bin.gz",
+                              "Size": 398,
+                              "Offset": 2775376
+                            }
+                          }, 
+                          "ItemSize": 1, 
+                          "Type": "ELEMENT_ARRAY_BUFFER"
+                        }, 
+                        "Mode": "TRIANGLE_STRIP"
+                      }
+                    } ], 
+                    "VertexAttributeList": {
+                      "Normal": {
+                        "UniqueID": 119, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 143,
+                            "Offset": 2776172
+                          }
+                        }, 
+                        "ItemSize": 3, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "Tangent": {
+                        "UniqueID": 122, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 143,
+                            "Offset": 2777888
+                          }
+                        }, 
+                        "ItemSize": 4, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "TexCoord0": {
+                        "UniqueID": 120, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 143,
+                            "Offset": 2780176
+                          }
+                        }, 
+                        "ItemSize": 2, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "TexCoord1": {
+                        "UniqueID": 121, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 143,
+                            "Offset": 2781320
+                          }
+                        }, 
+                        "ItemSize": 2, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "Vertex": {
+                        "UniqueID": 118, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 143,
+                            "Offset": 2782464
+                          }
+                        }, 
+                        "ItemSize": 3, 
+                        "Type": "ARRAY_BUFFER"
+                      }
+                    }
+                  }
+                },
+                {
+                  "osg.Geometry": {
+                    "UniqueID": 125, 
+                    "Name": "Cube", 
+                    "StateSet": {
+                      "osg.StateSet": {
+                        "UniqueID": 126, 
+                        "Name": "black_shiny", 
+                        "AttributeList": [ {
+                          "osg.Material": {
+                            "UniqueID": 128, 
+                            "Name": "black_shiny", 
+                            "Ambient": [ 0, 0, 0, 1], 
+                            "Diffuse": [ 0.00802, 0.00802, 0.00802, 1], 
+                            "Emission": [ 0, 0, 0, 1], 
+                            "Shininess": 12.5, 
+                            "Specular": [ 0.5, 0.5, 0.5, 1], 
+                            "UserDataContainer": {
+                              "UniqueID": 129, 
+                              "Values": [ {
+                                "Name": "source", 
+                                "Value": "blender"
+                              },
+                              {
+                                "Name": "DiffuseIntensity", 
+                                "Value": "0.800000011920929"
+                              },
+                              {
+                                "Name": "DiffuseColor", 
+                                "Value": "[ 0.010022, 0.010022, 0.010022 ]"
+                              },
+                              {
+                                "Name": "SpecularIntensity", 
+                                "Value": "0.5"
+                              },
+                              {
+                                "Name": "SpecularColor", 
+                                "Value": "[ 1.000000, 1.000000, 1.000000 ]"
+                              },
+                              {
+                                "Name": "SpecularHardness", 
+                                "Value": "50"
+                              },
+                              {
+                                "Name": "Emit", 
+                                "Value": "0.0"
+                              },
+                              {
+                                "Name": "Ambient", 
+                                "Value": "1.0"
+                              },
+                              {
+                                "Name": "Translucency", 
+                                "Value": "0.0"
+                              },
+                              {
+                                "Name": "DiffuseShader", 
+                                "Value": "LAMBERT"
+                              },
+                              {
+                                "Name": "SpecularShader", 
+                                "Value": "COOKTORR"
+                              } ]
+                            }
+                          }
+                        } ], 
+                        "UserDataContainer": {
+                          "UniqueID": 127, 
+                          "Values": [ {
+                            "Name": "source", 
+                            "Value": "blender"
+                          },
+                          {
+                            "Name": "00_UsePremultiplyAlpha", 
+                            "Value": "false"
+                          },
+                          {
+                            "Name": "00_UseAlpha", 
+                            "Value": "true"
+                          },
+                          {
+                            "Name": "00_DiffuseColor", 
+                            "Value": "1.0"
+                          },
+                          {
+                            "Name": "00_UsePremultiplyAlpha", 
+                            "Value": "false"
+                          },
+                          {
+                            "Name": "00_UseAlpha", 
+                            "Value": "true"
+                          },
+                          {
+                            "Name": "00_SpecularColor", 
+                            "Value": "1.0"
+                          },
+                          {
+                            "Name": "00_BlendType", 
+                            "Value": "MULTIPLY"
+                          } ]
+                        }
+                      }
+                    }, 
+                    "PrimitiveSetList": [ {
+                      "DrawElementsUShort": {
+                        "UniqueID": 134, 
+                        "Indices": {
+                          "Array": { 
+                            "Uint16Array": { 
+                              "File": "model_file.bin.gz",
+                              "Size": 3,
+                              "Offset": 2784180
+                            }
+                          }, 
+                          "ItemSize": 1, 
+                          "Type": "ELEMENT_ARRAY_BUFFER"
+                        }, 
+                        "Mode": "TRIANGLES"
+                      }
+                    },
+                    {
+                      "DrawElementsUShort": {
+                        "UniqueID": 135, 
+                        "Indices": {
+                          "Array": { 
+                            "Uint16Array": { 
+                              "File": "model_file.bin.gz",
+                              "Size": 684,
+                              "Offset": 2784188
+                            }
+                          }, 
+                          "ItemSize": 1, 
+                          "Type": "ELEMENT_ARRAY_BUFFER"
+                        }, 
+                        "Mode": "TRIANGLE_STRIP"
+                      }
+                    } ], 
+                    "VertexAttributeList": {
+                      "Normal": {
+                        "UniqueID": 131, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 417,
+                            "Offset": 2785556
+                          }
+                        }, 
+                        "ItemSize": 3, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "Tangent": {
+                        "UniqueID": 133, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 417,
+                            "Offset": 2790560
+                          }
+                        }, 
+                        "ItemSize": 4, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "TexCoord0": {
+                        "UniqueID": 132, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 417,
+                            "Offset": 2797232
+                          }
+                        }, 
+                        "ItemSize": 2, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "Vertex": {
+                        "UniqueID": 130, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 417,
+                            "Offset": 2800568
+                          }
+                        }, 
+                        "ItemSize": 3, 
+                        "Type": "ARRAY_BUFFER"
+                      }
+                    }
+                  }
+                },
+                {
+                  "osg.Geometry": {
+                    "UniqueID": 136, 
+                    "Name": "Cube", 
+                    "StateSet": {
+                      "osg.StateSet": {
+                        "UniqueID": 137, 
+                        "Name": "camera", 
+                        "AttributeList": [ {
+                          "osg.Material": {
+                            "UniqueID": 139, 
+                            "Name": "camera", 
+                            "Ambient": [ 0, 0, 0, 1], 
+                            "Diffuse": [ 0.17123, 0.17123, 0.17123, 1], 
+                            "Emission": [ 0, 0, 0, 1], 
+                            "Shininess": 12.5, 
+                            "Specular": [ 0.5, 0.5, 0.5, 1], 
+                            "UserDataContainer": {
+                              "UniqueID": 140, 
+                              "Values": [ {
+                                "Name": "source", 
+                                "Value": "blender"
+                              },
+                              {
+                                "Name": "DiffuseIntensity", 
+                                "Value": "0.800000011920929"
+                              },
+                              {
+                                "Name": "DiffuseColor", 
+                                "Value": "[ 0.214036, 0.214036, 0.214036 ]"
+                              },
+                              {
+                                "Name": "SpecularIntensity", 
+                                "Value": "0.5"
+                              },
+                              {
+                                "Name": "SpecularColor", 
+                                "Value": "[ 1.000000, 1.000000, 1.000000 ]"
+                              },
+                              {
+                                "Name": "SpecularHardness", 
+                                "Value": "50"
+                              },
+                              {
+                                "Name": "Emit", 
+                                "Value": "0.0"
+                              },
+                              {
+                                "Name": "Ambient", 
+                                "Value": "1.0"
+                              },
+                              {
+                                "Name": "Translucency", 
+                                "Value": "0.0"
+                              },
+                              {
+                                "Name": "DiffuseShader", 
+                                "Value": "LAMBERT"
+                              },
+                              {
+                                "Name": "SpecularShader", 
+                                "Value": "COOKTORR"
+                              } ]
+                            }
+                          }
+                        } ], 
+                        "UserDataContainer": {
+                          "UniqueID": 138, 
+                          "Values": [ {
+                            "Name": "source", 
+                            "Value": "blender"
+                          },
+                          {
+                            "Name": "00_UsePremultiplyAlpha", 
+                            "Value": "false"
+                          },
+                          {
+                            "Name": "00_UseAlpha", 
+                            "Value": "true"
+                          },
+                          {
+                            "Name": "00_DiffuseColor", 
+                            "Value": "1.0"
+                          },
+                          {
+                            "Name": "00_UsePremultiplyAlpha", 
+                            "Value": "false"
+                          },
+                          {
+                            "Name": "00_UseAlpha", 
+                            "Value": "true"
+                          },
+                          {
+                            "Name": "00_SpecularColor", 
+                            "Value": "1.0"
+                          },
+                          {
+                            "Name": "00_BlendType", 
+                            "Value": "MULTIPLY"
+                          } ]
+                        }
+                      }
+                    }, 
+                    "PrimitiveSetList": [ {
+                      "DrawElementsUShort": {
+                        "UniqueID": 145, 
+                        "Indices": {
+                          "Array": { 
+                            "Uint16Array": { 
+                              "File": "model_file.bin.gz",
+                              "Size": 912,
+                              "Offset": 2805572
+                            }
+                          }, 
+                          "ItemSize": 1, 
+                          "Type": "ELEMENT_ARRAY_BUFFER"
+                        }, 
+                        "Mode": "TRIANGLE_STRIP"
+                      }
+                    } ], 
+                    "VertexAttributeList": {
+                      "Normal": {
+                        "UniqueID": 142, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 574,
+                            "Offset": 2807396
+                          }
+                        }, 
+                        "ItemSize": 3, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "Tangent": {
+                        "UniqueID": 144, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 574,
+                            "Offset": 2814284
+                          }
+                        }, 
+                        "ItemSize": 4, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "TexCoord0": {
+                        "UniqueID": 143, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 574,
+                            "Offset": 2823468
+                          }
+                        }, 
+                        "ItemSize": 2, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "Vertex": {
+                        "UniqueID": 141, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 574,
+                            "Offset": 2828060
+                          }
+                        }, 
+                        "ItemSize": 3, 
+                        "Type": "ARRAY_BUFFER"
+                      }
+                    }
+                  }
+                },
+                {
+                  "osg.Geometry": {
+                    "UniqueID": 146, 
+                    "Name": "Cube", 
+                    "StateSet": {
+                      "osg.StateSet": {
+                        "UniqueID": 147, 
+                        "Name": "grid", 
+                        "AttributeList": [ {
+                          "osg.Material": {
+                            "UniqueID": 149, 
+                            "Name": "grid", 
+                            "Ambient": [ 0, 0, 0, 1], 
+                            "Diffuse": [ 0.61146, 0.11118, 0.11118, 1], 
+                            "Emission": [ 0, 0, 0, 1], 
+                            "Shininess": 12.5, 
+                            "Specular": [ 0.5, 0.5, 0.5, 1], 
+                            "UserDataContainer": {
+                              "UniqueID": 150, 
+                              "Values": [ {
+                                "Name": "source", 
+                                "Value": "blender"
+                              },
+                              {
+                                "Name": "DiffuseIntensity", 
+                                "Value": "0.800000011920929"
+                              },
+                              {
+                                "Name": "DiffuseColor", 
+                                "Value": "[ 0.764321, 0.138969, 0.138969 ]"
+                              },
+                              {
+                                "Name": "SpecularIntensity", 
+                                "Value": "0.5"
+                              },
+                              {
+                                "Name": "SpecularColor", 
+                                "Value": "[ 1.000000, 1.000000, 1.000000 ]"
+                              },
+                              {
+                                "Name": "SpecularHardness", 
+                                "Value": "50"
+                              },
+                              {
+                                "Name": "Emit", 
+                                "Value": "0.0"
+                              },
+                              {
+                                "Name": "Ambient", 
+                                "Value": "1.0"
+                              },
+                              {
+                                "Name": "Translucency", 
+                                "Value": "0.0"
+                              },
+                              {
+                                "Name": "DiffuseShader", 
+                                "Value": "LAMBERT"
+                              },
+                              {
+                                "Name": "SpecularShader", 
+                                "Value": "COOKTORR"
+                              } ]
+                            }
+                          }
+                        } ], 
+                        "UserDataContainer": {
+                          "UniqueID": 148, 
+                          "Values": [ {
+                            "Name": "source", 
+                            "Value": "blender"
+                          },
+                          {
+                            "Name": "00_UsePremultiplyAlpha", 
+                            "Value": "false"
+                          },
+                          {
+                            "Name": "00_UseAlpha", 
+                            "Value": "true"
+                          },
+                          {
+                            "Name": "00_DiffuseColor", 
+                            "Value": "1.0"
+                          },
+                          {
+                            "Name": "00_BlendType", 
+                            "Value": "MIX"
+                          } ]
+                        }
+                      }
+                    }, 
+                    "PrimitiveSetList": [ {
+                      "DrawElementsUShort": {
+                        "UniqueID": 156, 
+                        "Indices": {
+                          "Array": { 
+                            "Uint16Array": { 
+                              "File": "model_file.bin.gz",
+                              "Size": 48,
+                              "Offset": 2834948
+                            }
+                          }, 
+                          "ItemSize": 1, 
+                          "Type": "ELEMENT_ARRAY_BUFFER"
+                        }, 
+                        "Mode": "TRIANGLES"
+                      }
+                    },
+                    {
+                      "DrawElementsUShort": {
+                        "UniqueID": 157, 
+                        "Indices": {
+                          "Array": { 
+                            "Uint16Array": { 
+                              "File": "model_file.bin.gz",
+                              "Size": 392,
+                              "Offset": 2835044
+                            }
+                          }, 
+                          "ItemSize": 1, 
+                          "Type": "ELEMENT_ARRAY_BUFFER"
+                        }, 
+                        "Mode": "TRIANGLE_STRIP"
+                      }
+                    } ], 
+                    "VertexAttributeList": {
+                      "Normal": {
+                        "UniqueID": 152, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 148,
+                            "Offset": 2835828
+                          }
+                        }, 
+                        "ItemSize": 3, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "Tangent": {
+                        "UniqueID": 155, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 148,
+                            "Offset": 2837604
+                          }
+                        }, 
+                        "ItemSize": 4, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "TexCoord0": {
+                        "UniqueID": 153, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 148,
+                            "Offset": 2839972
+                          }
+                        }, 
+                        "ItemSize": 2, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "TexCoord1": {
+                        "UniqueID": 154, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 148,
+                            "Offset": 2841156
+                          }
+                        }, 
+                        "ItemSize": 2, 
+                        "Type": "ARRAY_BUFFER"
+                      }, 
+                      "Vertex": {
+                        "UniqueID": 151, 
+                        "Array": { 
+                          "Float32Array": { 
+                            "File": "model_file.bin.gz",
+                            "Size": 148,
+                            "Offset": 2842340
+                          }
+                        }, 
+                        "ItemSize": 3, 
+                        "Type": "ARRAY_BUFFER"
+                      }
+                    }
+                  }
+                } ]
+              }
+            } ]
+          }
+        },
+        {
+          "osg.MatrixTransform": {
+            "UniqueID": 158, 
+            "Name": "Lamp.001", 
+            "Matrix": [ 0.92976, 0.36086, 0.073, 0, -0.31771, 0.6862, 0.65436, 0, 0.18604, -0.63159, 0.75265, 0, 4.07625, -3.7467, 5.90386, 1 ], 
+            "Children": [ {
+              "osg.LightSource": {
+                "UniqueID": 159, 
+                "Name": "Lamp.001", 
+                "StateSet": {
+                  "osg.StateSet": {
+                    "UniqueID": 160
+                  }
+                }, 
+                "Light": {
+                  "osg.Light": {
+                    "UniqueID": 161, 
+                    "Ambient": [ 1, 1, 1, 1], 
+                    "ConstantAttenuation": 1, 
+                    "Diffuse": [ 1, 1, 1, 1], 
+                    "Direction": [ 0, 0, -1], 
+                    "LightNum": 1, 
+                    "LinearAttenuation": 0, 
+                    "Position": [ 0, 0, 1, 0], 
+                    "QuadraticAttenuation": 0, 
+                    "Specular": [ 1, 1, 1, 1], 
+                    "SpotCutoff": 180, 
+                    "SpotExponent": 0, 
+                    "UserDataContainer": {
+                      "UniqueID": 162, 
+                      "Values": [ {
+                        "Name": "source", 
+                        "Value": "blender"
+                      },
+                      {
+                        "Name": "Energy", 
+                        "Value": "1.0"
+                      },
+                      {
+                        "Name": "Color", 
+                        "Value": "[ 1.000000, 1.000000, 1.000000 ]"
+                      },
+                      {
+                        "Name": "UseDiffuse", 
+                        "Value": "true"
+                      },
+                      {
+                        "Name": "UseSpecular", 
+                        "Value": "true"
+                      },
+                      {
+                        "Name": "Distance", 
+                        "Value": "29.999982833862305"
+                      },
+                      {
+                        "Name": "Type", 
+                        "Value": "SUN"
+                      } ]
+                    }
+                  }
+                }
+              }
+            } ]
+          }
+        },
+        {
+          "osg.MatrixTransform": {
+            "UniqueID": 163, 
+            "Name": "Lamp.002", 
+            "Matrix": [ 0.69655, -0.70479, 0.13449, 0, 0.16528, -0.02479, -0.98594, 0, 0.69821, 0.70898, 0.09922, 0, 4.07625, 3.78597, 5.78677, 1 ], 
+            "Children": [ {
+              "osg.LightSource": {
+                "UniqueID": 164, 
+                "Name": "Lamp.002", 
+                "StateSet": {
+                  "osg.StateSet": {
+                    "UniqueID": 165
+                  }
+                }, 
+                "Light": {
+                  "osg.Light": {
+                    "UniqueID": 166, 
+                    "Ambient": [ 1, 1, 1, 1], 
+                    "ConstantAttenuation": 1, 
+                    "Diffuse": [ 0.59, 0.59, 0.59, 1], 
+                    "Direction": [ 0, 0, -1], 
+                    "LightNum": 2, 
+                    "LinearAttenuation": 0, 
+                    "Position": [ 0, 0, 1, 0], 
+                    "QuadraticAttenuation": 0, 
+                    "Specular": [ 0.59, 0.59, 0.59, 1], 
+                    "SpotCutoff": 180, 
+                    "SpotExponent": 0, 
+                    "UserDataContainer": {
+                      "UniqueID": 167, 
+                      "Values": [ {
+                        "Name": "source", 
+                        "Value": "blender"
+                      },
+                      {
+                        "Name": "Energy", 
+                        "Value": "0.5900000333786011"
+                      },
+                      {
+                        "Name": "Color", 
+                        "Value": "[ 1.000000, 1.000000, 1.000000 ]"
+                      },
+                      {
+                        "Name": "UseDiffuse", 
+                        "Value": "true"
+                      },
+                      {
+                        "Name": "UseSpecular", 
+                        "Value": "true"
+                      },
+                      {
+                        "Name": "Distance", 
+                        "Value": "29.999982833862305"
+                      },
+                      {
+                        "Name": "Type", 
+                        "Value": "SUN"
+                      } ]
+                    }
+                  }
+                }
+              }
+            } ]
+          }
+        },
+        {
+          "osg.MatrixTransform": {
+            "UniqueID": 168, 
+            "Name": "Lamp.003", 
+            "Matrix": [ 0.0304, -0.92363, 0.38209, 0, -0.5781, 0.29559, 0.76054, 0, -0.8154, -0.24401, -0.52497, 0, -3.06746, -0.10131, 4.11418, 1 ], 
+            "Children": [ {
+              "osg.LightSource": {
+                "UniqueID": 169, 
+                "Name": "Lamp.003", 
+                "StateSet": {
+                  "osg.StateSet": {
+                    "UniqueID": 170
+                  }
+                }, 
+                "Light": {
+                  "osg.Light": {
+                    "UniqueID": 171, 
+                    "Ambient": [ 1, 1, 1, 1], 
+                    "ConstantAttenuation": 1, 
+                    "Diffuse": [ 0.19, 0.19, 0.19, 1], 
+                    "Direction": [ 0, 0, -1], 
+                    "LightNum": 3, 
+                    "LinearAttenuation": 0, 
+                    "Position": [ 0, 0, 1, 0], 
+                    "QuadraticAttenuation": 0, 
+                    "Specular": [ 0.19, 0.19, 0.19, 1], 
+                    "SpotCutoff": 180, 
+                    "SpotExponent": 0, 
+                    "UserDataContainer": {
+                      "UniqueID": 172, 
+                      "Values": [ {
+                        "Name": "source", 
+                        "Value": "blender"
+                      },
+                      {
+                        "Name": "Energy", 
+                        "Value": "0.1900000274181366"
+                      },
+                      {
+                        "Name": "Color", 
+                        "Value": "[ 1.000000, 1.000000, 1.000000 ]"
+                      },
+                      {
+                        "Name": "UseDiffuse", 
+                        "Value": "true"
+                      },
+                      {
+                        "Name": "UseSpecular", 
+                        "Value": "true"
+                      },
+                      {
+                        "Name": "Distance", 
+                        "Value": "29.999982833862305"
+                      },
+                      {
+                        "Name": "Type", 
+                        "Value": "SUN"
+                      } ]
+                    }
+                  }
+                }
+              }
+            } ]
+          }
+        },
+        {
+          "osg.MatrixTransform": {
+            "UniqueID": 173, 
+            "Name": "Lamp.004", 
+            "Matrix": [ 0.10335, 0.18093, -0.97805, 0, -0.98117, 0.17987, -0.0704, 0, 0.16318, 0.96691, 0.19611, 0, 3.6031, 1.47314, 1.49982, 1 ], 
+            "Children": [ {
+              "osg.LightSource": {
+                "UniqueID": 174, 
+                "Name": "Lamp.004", 
+                "StateSet": {
+                  "osg.StateSet": {
+                    "UniqueID": 175
+                  }
+                }, 
+                "Light": {
+                  "osg.Light": {
+                    "UniqueID": 176, 
+                    "Ambient": [ 1, 1, 1, 1], 
+                    "ConstantAttenuation": 1, 
+                    "Diffuse": [ 0.36, 0.36, 0.36, 1], 
+                    "Direction": [ 0, 0, -1], 
+                    "LightNum": 0, 
+                    "LinearAttenuation": 0, 
+                    "Position": [ 0, 0, 1, 0], 
+                    "QuadraticAttenuation": 0, 
+                    "Specular": [ 0.36, 0.36, 0.36, 1], 
+                    "SpotCutoff": 180, 
+                    "SpotExponent": 0, 
+                    "UserDataContainer": {
+                      "UniqueID": 177, 
+                      "Values": [ {
+                        "Name": "source", 
+                        "Value": "blender"
+                      },
+                      {
+                        "Name": "Energy", 
+                        "Value": "0.3600000739097595"
+                      },
+                      {
+                        "Name": "Color", 
+                        "Value": "[ 1.000000, 1.000000, 1.000000 ]"
+                      },
+                      {
+                        "Name": "UseDiffuse", 
+                        "Value": "true"
+                      },
+                      {
+                        "Name": "UseSpecular", 
+                        "Value": "true"
+                      },
+                      {
+                        "Name": "Distance", 
+                        "Value": "29.999982833862305"
+                      },
+                      {
+                        "Name": "Type", 
+                        "Value": "SUN"
+                      } ]
+                    }
+                  }
+                }
+              }
+            } ]
+          }
+        } ]
+      }
+    } ]
+  }
+}

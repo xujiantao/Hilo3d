@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Hilo3d Car Inner Demo</title>
+    <link rel="stylesheet" type="text/css" href="./example.css">
+</head>
+<body>
+    <div id="container"></div>
+    <!-- <script src="//g.alicdn.com/tmapp/animation-data/4.1.37/jc/tools/vconsole.min.js"></script> -->
+    <script src="../build/Hilo3d.js"></script>
+    <script src="./js/stats.js"></script>
+    <script src="./js/OrbitControls.js"></script>
+    <script src="./js/init.js"></script>
+    <script>
+        orbitControls.isLockZ = true;
+        var loader = new Hilo3d.BasicLoader();
+        loader.load({
+            src: '//img.alicdn.com/tfs/TB1SbuXQXXXXXcvXXXXXXXXXXXX-3000-2000.jpg',
+            crossOrigin: 'anonymous'
+        }).then(function(image){
+            return new Hilo3d.Texture({ image: image });
+        }, function(err){
+            return new Hilo3d.Color(.5, .5, .5);
+        }).then(function(diffuse){
+            var geometry = new Hilo3d.BoxGeometry();
+            geometry.setBackUV([[0, 0.5], [0.333, 0.5], [0.333, 0], [0, 0]]);
+            geometry.setLeftUV([[0.333, 0.5], [0.667, 0.5], [0.667, 0], [0.333, 0]]);
+            geometry.setFrontUV([[0.667, 0.5], [1, 0.5], [1, 0], [0.667, 0]]);
+            geometry.setRightUV([[0, 1], [0.333, 1], [0.333, 0.5], [0, 0.5]]);
+            geometry.setTopUV([[0.667, 0.5], [0.333, 0.5], [0.333, 1], [0.667, 1]]);
+            geometry.setBottomUV([[1, 0.5], [0.667, 0.5], [0.667, 1], [1, 1]]);
+            var material = new Hilo3d.BasicMaterial({
+                lightType: 'NONE',
+                side: Hilo3d.constants.BACK
+            });
+            material.diffuse = diffuse;
+            var box = new Hilo3d.Mesh({ geometry: geometry, material: material });
+            box.setScale(10);
+            stage.addChild(box);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Hilo3d Mesh Picker Demo</title>
+    <link rel="stylesheet" type="text/css" href="./example.css">
+</head>
+<body>
+    <div id="container"></div>
+    <!-- <script src="//g.alicdn.com/tmapp/animation-data/4.1.37/jc/tools/vconsole.min.js"></script>  -->
+    <script src="../build/Hilo3d.js"></script>
+    <script src="./js/stats.js"></script>
+    <script src="./js/OrbitControls.js"></script>
+    <script src="./js/init.js"></script>
+    <script>
+        var loader = new Hilo3d.GLTFLoader();
+        loader.load({
+            src: '//cx.alicdn.com/tmx/59724b74e80d9d1211456f0917cea75d.gltf'
+        }).then(function(model){
+            window.xx = model;
+            model.node.setScale(0.002);
+            stage.addChild(model.node);
+        });
+
+        var mph = new Hilo3d.MeshPicker({
+            renderer: stage.renderer,
+            debug: true
+        });
+
+        stage.container.addEventListener('click', function(evt) {
+            var mesh = mph.getSelection(evt.clientX, evt.clientY)[0];
+            console.log(evt.clientX, evt.clientY, mesh);
+            if (mesh) {
+                if (mesh.material.isSelected) {
+                    mesh.material.isSelected = false;
+                    mesh.material.transparency /= 0.5;
+                } else {
+                    mesh.material.isSelected = true;
+                    mesh.material.transparency *= 0.5;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

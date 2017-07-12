@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Hilo3d Split Face Demo</title>
+    <link rel="stylesheet" type="text/css" href="./example.css">
+</head>
+<body>
+    <div id="container"></div>
+    <script src="../build/Hilo3d.js"></script>
+    <script src="./js/stats.js"></script>
+    <script src="./js/OrbitControls.js"></script>
+    <script src="./js/init.js"></script>
+    <script id="frag" type="text/glsl">
+        #define DIFFUSE_MAP 1
+        #ifdef GL_ES
+        precision highp float;
+        #endif
+        #ifdef DIFFUSE_MAP
+            uniform sampler2D u_diffuse;
+            varying vec2 v_uv;
+        #else
+            uniform vec4 u_diffuse;
+        #endif
+        varying float v_diff;
+        void main(void) {
+            #ifdef DIFFUSE_MAP
+                vec4 color = texture2D(u_diffuse, v_uv);
+            #else
+                vec4 color = u_diffuse;
+            #endif
+            gl_FragColor = color * v_diff;
+        }
+    </script>
+    <script id="vert" type="text/glsl">
+        #define JOINT_COUNT 27
+        #ifdef GL_ES
+        precision highp float;
+        #endif
+        attribute float a_pos;
+        attribute vec2 a_uv;
+        varying vec2 v_uv;
+
+        #ifdef JOINT_COUNT
+            attribute vec4 a_skinIndices;
+            attribute vec4 a_skinWeights;
+            uniform mat4 u_jointMat[JOINT_COUNT];
+        #endif
+
+        uniform mat4 u_mat;
+        uniform sampler2D u_dataMap;
+        uniform vec2 u_dataMapSize;
+        uniform float u_xx;
+        uniform float u_yCenter;
+        uniform float u_xMax;
+        varying float v_diff;
+
+        vec4 getPoint(float index) {
+            float x = float(mod(index, u_dataMapSize.x));
+            float y = float(floor(index / u_dataMapSize.x));
+            float dx = 1.0 / float(u_dataMapSize.x);
+            float dy = 1.0 / float(u_dataMapSize.y);
+            y = dy * (y + 0.5);
+            return texture2D(u_dataMap, vec2(dx * (x + 0.5), y));
+        }
+
+        void main(void) {
+            v_uv = a_uv;
+            float m = mod(a_pos, 3.0);
+            float start = a_pos - m;
+            vec4 a = getPoint(start);
+            vec4 b = getPoint(start + 1.0);
+            vec4 c = getPoint(start + 2.0);
+
+            #ifdef JOINT_COUNT
+                mat4 skinMat = a_skinWeights.x * u_jointMat[int(a_skinIndices.x)];
+                skinMat += a_skinWeights.y * u_jointMat[int(a_skinIndices.y)];
+                skinMat += a_skinWeights.z * u_jointMat[int(a_skinIndices.z)];
+                skinMat += a_skinWeights.w * u_jointMat[int(a_skinIndices.w)];
+                a = skinMat * a;
+                b = skinMat * b;
+                c = skinMat * c;
+            #endif
+
+            vec4 pos;
+            if (m == 0.0) {
+                pos = a;
+            } else if (m == 1.0) {
+                pos = b;
+            } else {
+                pos = c;
+            }
+
+            vec4 center = (a + b + c) / 3.0;
+            float xHalf = u_xMax / 2.0;
+
+            if (center.x > u_xx) {
+                float diff = center.x - u_xx;
+                if (diff > u_xMax) {
+                    diff = u_xMax;
+                }
+                pos.x += diff;
+                if (diff < xHalf) {
+                    diff = (xHalf - diff) / xHalf;
+                } else {
+                    diff = (diff - xHalf) / xHalf;
+                }
+                v_diff = diff;
+                
+                pos.y = pos.y - (1.0 - diff) * (pos.y - u_yCenter);
+                pos.z = diff * pos.z;
+            } else {
+                v_diff = 1.0;
+            }
+
+            gl_Position = u_mat * pos;
+        }
+    </script>
+    <script>
+        stage.addChild(new Hilo3d.AxisHelper({ size: 1 }));
+        var splitMaterial = new Hilo3d.ShaderMaterial({
+            fs: $('frag').innerText,
+            vs: $('vert').innerText,
+            attributes: {
+                a_pos: {
+                    semantic: 'POSITION'
+                },
+                a_uv: {
+                    semantic: 'TEXCOORD_0'
+                },
+                a_skinIndices: {
+                    semantic: 'SKININDICES',
+                },
+                a_skinWeights: {
+                    semantic: 'SKINWEIGHTS'
+                }
+            },
+            uniforms: {
+                u_mat: {
+                    semantic:'MODELVIEWPROJECTION'
+                },
+                u_diffuse: {
+                    semantic: 'DIFFUSE'
+                },
+                u_dataMap: {
+                    get: function (gl, mesh, camera, lightManager, material, programInfo) {
+                        return this.handlerColorOrTexture(mesh.geometry.texture, programInfo.textureIndex);
+                    }
+                },
+                u_dataMapSize: {
+                    get: function (gl, mesh) {
+                        return [mesh.geometry.texture.width, mesh.geometry.texture.height];
+                    }
+                },
+                u_xMax: {
+                    get: function (gl, mesh) {
+                        return mesh.xMax;
+                    }
+                },
+                u_xx: {
+                    get: function (gl, mesh) {
+                        return mesh.splitX;
+                    }
+                },
+                u_yCenter: {
+                    get: function (gl, mesh) {
+                        return mesh.yCenter;
+                    }
+                },
+                u_jointMat: {
+                    semantic: 'JOINTMATRIX',
+                    isDependOther: true
+                }
+            }
+        });
+
+        var loader = new Hilo3d.GLTFLoader();
+        loader.load({
+            src: '//ossgw.alicdn.com/tmall-c3/tmx/be064aa4ab91137ef16541d960ec5739.gltf'
+        }).then(function(model){
+            model.node.needCallChildUpdate = true;
+            model.meshes.forEach(function(mesh){
+                var diffuse = mesh.material.diffuse;
+                mesh.material = splitMaterial.clone();
+                mesh.material.diffuse = diffuse;
+
+                var geometry = mesh.geometry;
+
+                var bounds = geometry.getBounds(new Hilo3d.Matrix4());
+                console.log(bounds);
+                mesh.xMax = bounds.xMax;
+                mesh.yCenter = bounds.y;
+
+                geometry.convertToNoIndices(4);
+                geometry.texture = new Hilo3d.DataTexture({ data: geometry.vertices.data });
+                var len = geometry.vertices.length / 4;
+                geometry.vertices = new Hilo3d.GeometryData(new Float32Array(len));
+                for (var i = 0; i < len; i++) {
+                    geometry.vertices.data[i] = i;
+                }
+
+                mesh.splitX = bounds.xMax;
+                var type = -1;
+                var step = bounds.width / 500;
+                mesh.onUpdate = function () {
+                    mesh.splitX += step * type;
+                    if (mesh.splitX < bounds.xMin * 2) {
+                        type = 1;
+                    } else if (mesh.splitX > bounds.xMax * 2) {
+                        type = -1;
+                    }
+                }
+            });
+
+            model.node.setScale(.002);
+            model.node.x -= .4;
+            stage.addChild(model.node);
+            window.xx = model;
+        });
+    </script>
+</body>
+</html>

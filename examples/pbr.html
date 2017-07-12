@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Hilo3d PBR Demo</title>
+    <link rel="stylesheet" type="text/css" href="./example.css">
+</head>
+<body>
+<div id="container"></div>
+<script src="../build/Hilo3d.js"></script>
+<script src="./js/stats.js"></script>
+<script src="./js/OrbitControls.js"></script>
+<script src="./js/init.js"></script>
+<script>
+    ambientLight.amount = 0.03;
+
+    var pointLight = new Hilo3d.PointLight({
+        color:new Hilo3d.Color(.3, .3, .3),
+        x:5,
+        y:0,
+        z:10,
+        linearAttenuation:0.03,
+        quadraticAttenuation:0.0017
+    });
+    stage.addChild(pointLight);
+
+    Hilo3d.Tween.to(pointLight, {
+        x:-5
+    }, {
+        duration:2000,
+        loop:true,
+        reverse:true
+    });
+
+
+    function init(diffuseEnvMap, specularEnvMap) {
+        var container = new Hilo3d.Node();
+        var material = new Hilo3d.PBRMaterial({
+            // albedo: new Hilo3d.Vector3(0, 0, 0),
+            baseColorMap: new Hilo3d.LazyTexture({
+                src: '//gw.alicdn.com/tfs/TB1XKzkRFXXXXbgapXXXXXXXXXX-2048-2048.png'
+                // src: '/dl/gold-scuffed-Unreal-Engine/gold-scuffed_basecolor.png'
+            }),
+            metallicMap: new Hilo3d.LazyTexture({
+                src: '//gw.alicdn.com/tfs/TB1CdvsRFXXXXaeaXXXXXXXXXXX-2048-2048.png'
+                // src: '/dl/gold-scuffed-Unreal-Engine/gold-scuffed_metallic.png'
+            }),
+            roughnessMap: new Hilo3d.LazyTexture({
+                src: '//gw.alicdn.com/tfs/TB1tCLYRFXXXXcbXXXXXXXXXXXX-2048-2048.png'
+                // src: '/dl/gold-scuffed-Unreal-Engine/gold-scuffed_roughness.png'
+            }),
+            normalMap: new Hilo3d.LazyTexture({
+                src: '//gw.alicdn.com/tfs/TB1Ov6TRFXXXXcXXpXXXXXXXXXX-2048-2048.png'
+                // src: '/dl/gold-scuffed-Unreal-Engine/gold-scuffed_normal.png'
+            }),
+            brdfLUT: new Hilo3d.LazyTexture({
+                // flipY: true,
+                src: '//gw.alicdn.com/tfs/TB1EvwBRFXXXXbNXpXXXXXXXXXX-256-256.png'
+            }),
+            diffuseEnvMap: diffuseEnvMap,
+            specularEnvMap: specularEnvMap
+        });
+        var geometry = new Hilo3d.SphereGeometry({
+            radius: 1,
+            heightSegments: 32,
+            widthSegments: 64,
+        })
+        var mesh = new Hilo3d.Mesh({
+            geometry: geometry,
+            material: material
+        });
+        container.addChild(mesh);
+        stage.addChild(container);
+        orbitControls.model = mesh;
+    }
+
+    function init2(diffuseEnvMap, specularEnvMap) {
+        var glTFLoader = new Hilo3d.GLTFLoader();
+        glTFLoader.load({
+            // src: '/glTF-WebGL-PBR/models/BoomBox/glTF/BoomBox.gltf'
+            src: './models/BoomBox/BoomBox.gltf'
+        }).then(function (model) {
+            window.xx = model;
+            var brfdTexture = new Hilo3d.LazyTexture({
+                src: '//gw.alicdn.com/tfs/TB1EvwBRFXXXXbNXpXXXXXXXXXX-256-256.png'
+                // src: '/glTF-WebGL-PBR/textures/brdfLUT.png'
+            });
+            model.materials.forEach(function (material) {
+                // material.cullFace = false;
+                material.brdfLUT = brfdTexture;
+                material.diffuseEnvMap = diffuseEnvMap;
+                material.specularEnvMap = specularEnvMap;
+            })
+            stage.addChild(model.node);
+        })
+    }
+
+    var loadQueue = new Hilo3d.LoadQueue([{
+        type: 'CubeTexture',
+        images: [
+            '//gw.alicdn.com/tfs/TB1bZT_RFXXXXXmaXXXXXXXXXXX-128-128.jpg',
+            '//gw.alicdn.com/tfs/TB1Ipz8RFXXXXbeaXXXXXXXXXXX-128-128.jpg',
+            '//gw.alicdn.com/tfs/TB1HRUrRFXXXXaWXFXXXXXXXXXX-128-128.jpg',
+            '//gw.alicdn.com/tfs/TB1FDYWRFXXXXX6aXXXXXXXXXXX-128-128.jpg',
+            '//gw.alicdn.com/tfs/TB1wUAHRFXXXXcKXXXXXXXXXXXX-128-128.jpg',
+            '//gw.alicdn.com/tfs/TB1mz3vRFXXXXXIXFXXXXXXXXXX-128-128.jpg'
+        ]
+    }, {
+        type: 'CubeTexture',
+        right: '//gw.alicdn.com/tfs/TB1DqMoRFXXXXcdXFXXXXXXXXXX-512-512.jpg',
+        left: '//gw.alicdn.com/tfs/TB1KlAuOVXXXXb9apXXXXXXXXXX-512-512.jpg',
+        top: '//gw.alicdn.com/tfs/TB15asiRFXXXXXtXVXXXXXXXXXX-512-512.jpg',
+        bottom: '//gw.alicdn.com/tfs/TB1KQ.oRFXXXXciXFXXXXXXXXXX-512-512.jpg',
+        front: '//gw.alicdn.com/tfs/TB1w_7hRFXXXXaoXVXXXXXXXXXX-512-512.jpg',
+        back: '//gw.alicdn.com/tfs/TB1pzZbRFXXXXcNXVXXXXXXXXXX-512-512.jpg'
+    }]).on('complete', function () {
+        var result = loadQueue.getAllContent();
+        var diffuseEnvMap = result[0];
+        var specularEnvMap = result[1];
+        var box = new Hilo3d.Mesh({
+            geometry: new Hilo3d.BoxGeometry(),
+            material: new Hilo3d.BasicMaterial({
+                lightType: 'NONE',
+                side: Hilo3d.constants.BACK,
+                diffuse: specularEnvMap
+            })
+        }).addTo(stage);
+        box.setScale(20);
+        init2(diffuseEnvMap, specularEnvMap);
+    }).start();
+</script>
+</body>
+</html>
