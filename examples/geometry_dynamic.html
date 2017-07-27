@@ -33,15 +33,17 @@
         stage.addChild(textureBox);
         
         var vertices = boxGeometry.vertices;
-        var data = vertices.data;
-        Hilo3d.Tween.to(data, {
-            0:1
+        var point = new Hilo3d.Vector3();
+        point.copy(vertices.get(0));
+        Hilo3d.Tween.to(point, {
+            x:1
         }, {
             duration:500,
             reverse:true,
             loop:true,
             onUpdate(){
-                boxGeometry.updateNormals();
+                vertices.set(0, point);
+                boxGeometry.calculateNormals();
                 boxGeometry.normals.isDirty = true;
                 vertices.isDirty = true;
             }

@@ -26,6 +26,7 @@
     <script src="../js/OrbitControls.js"></script>
     <script src="../js/init.js"></script>
     <script>
+        var showSphere = false;
         var ossBasePath = '//ossgw.alicdn.com/tmall-c3/tmx/';
         var glTFModels = {
             Box: {
@@ -99,6 +100,24 @@
                         opt.setAttribute('value', i);
                         cameraSelect.appendChild(opt);
                     }
+                }
+                if(window.showSphere){
+                    model.meshes.forEach((mesh) => {
+                        var sphere = mesh.geometry.getLocalSphereBounds();
+                        var geometry = new Hilo3d.SphereGeometry({
+                            radius:sphere.radius
+                        });
+                        var m = new Hilo3d.Mesh({
+                            material:new Hilo3d.BasicMaterial({
+                                lightType:'NONE',
+                                diffuse:new Hilo3d.Color(1,0,0),
+                                wireframe:true
+                            }),
+                            geometry:geometry
+                        });
+                        m.setPosition(sphere.center.x, sphere.center.y, sphere.center.z);
+                        mesh.addChild(m);
+                    });
                 }
                 stage.camera = camera;
                 stage.addChild(model.node);

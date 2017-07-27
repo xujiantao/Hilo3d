@@ -31,14 +31,10 @@
         var video = $('video');
         video.addEventListener('canplaythrough', function () {
             console.log('canplaythrough');
+            video.play();
             addPlane();
         });
-
-        video.addEventListener('ended', function () {
-            video.play();
-        });
-
-        video.play();
+        
 
         var isAdded = false;
         function addPlane(){
@@ -78,29 +74,19 @@
         }
 
         var loadQueue = new Hilo3d.LoadQueue([{
-            crossOrigin: 'anonymous',
-            src: '//ossgw.alicdn.com/tmall-c3/material/1c4c59caf87946dbb0a3139841e73b0c.jpg'
-        }, {
-            crossOrigin: 'anonymous',
-            src: '//ossgw.alicdn.com/tmall-c3/material/88716c33144f48a6bcebc63dc8e93bfd.jpg'
-        }, {
-            crossOrigin: 'anonymous',
-            src: '//ossgw.alicdn.com/tmall-c3/material/2950c9178161401c92126ac175ab24f0.jpg'
-        }, {
-            crossOrigin: 'anonymous',
-            src: '//ossgw.alicdn.com/tmall-c3/material/09e6d1ee230b4e54a98eced4954a3934.jpg'
-        }, {
-            crossOrigin: 'anonymous',
-            src: '//ossgw.alicdn.com/tmall-c3/material/06d6f8ba59fb48dfada16185c90f08aa.jpg'
-        }, {
-            crossOrigin: 'anonymous',
-            src: '//ossgw.alicdn.com/tmall-c3/material/aa2b0ae15fa94dc3956c382718f368d7.jpg'
+            type: 'CubeTexture',
+            images: [
+                '//ossgw.alicdn.com/tmall-c3/material/1c4c59caf87946dbb0a3139841e73b0c.jpg',
+                '//ossgw.alicdn.com/tmall-c3/material/88716c33144f48a6bcebc63dc8e93bfd.jpg',
+                '//ossgw.alicdn.com/tmall-c3/material/2950c9178161401c92126ac175ab24f0.jpg',
+                '//ossgw.alicdn.com/tmall-c3/material/09e6d1ee230b4e54a98eced4954a3934.jpg',
+                '//ossgw.alicdn.com/tmall-c3/material/06d6f8ba59fb48dfada16185c90f08aa.jpg',
+                '//ossgw.alicdn.com/tmall-c3/material/aa2b0ae15fa94dc3956c382718f368d7.jpg'
+            ]
         }]).on('complete', function () {
             var result = loadQueue.getAllContent();
-            var skyboxMap = window.skyboxMap = new Hilo3d.CubeTexture({
-                image: result.filter(function(r){return r instanceof Image}),
-                flipY: true
-            });
+            var skyboxMap = window.skyboxMap = result[0];
+            skyboxMap.flipY = true;
             skybox = new Hilo3d.Mesh({
                 geometry: new Hilo3d.BoxGeometry(),
                 material: new Hilo3d.BasicMaterial({
@@ -114,35 +100,7 @@
             skybox.setScale(100);
             stage.addChild(skybox);
 
-            var ray = new Hilo3d.Ray();
-            var inverseMatrix = new Hilo3d.Matrix4;
-            var boxGeometry = new Hilo3d.BoxGeometry();
-            
-            document.body.onclick = function(e){
-                var mousePos = {
-                    x:e.clientX, 
-                    y:e.clientY
-                };
-                ray.fromCamera(camera, mousePos.x, mousePos.y, stage.width, stage.height);
-                var hitResult = skybox.raycast(ray);
-
-                if(hitResult){
-                    console.log(hitResult);
-                    hitResult = hitResult[0];
-                    mesh = new Hilo3d.Mesh({
-                        geometry:boxGeometry,
-                        material:new Hilo3d.BasicMaterial({
-                            depthTest:false,
-                            lightType:'NONE',
-                            diffuse:new Hilo3d.Color(Math.random(), Math.random(), Math.random())
-                        })
-                    });
-                    mesh.setScale(1);
-                    hitResult.transformMat4(inverseMatrix.invert(stage.matrix));
-                    mesh.setPosition(hitResult.x, hitResult.y, hitResult.z);
-                    stage.addChild(mesh);
-                }
-            };
+            addPlane();
         }).start();
     </script>
 </body>

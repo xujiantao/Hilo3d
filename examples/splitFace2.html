@@ -135,45 +135,30 @@
             fs: $('frag').innerText,
             vs: $('vert').innerText,
             attributes: {
-                a_pos: {
-                    semantic: 'POSITION'
-                },
-                a_uv: {
-                    semantic: 'TEXCOORD_0'
-                },
-                a_skinIndices: {
-                    semantic: 'SKININDICES',
-                },
-                a_skinWeights: {
-                    semantic: 'SKINWEIGHTS'
-                }
+                a_pos: 'POSITION',
+                a_uv: 'TEXCOORD_0',
+                a_skinIndices: 'SKININDICES',
+                a_skinWeights: 'SKINWEIGHTS',
             },
             uniforms: {
-                u_mat: {
-                    semantic:'MODELVIEWPROJECTION'
-                },
-                u_diffuse: {
-                    semantic: 'DIFFUSE'
-                },
+                u_mat: 'MODELVIEWPROJECTION',
+                u_diffuse: 'DIFFUSE',
                 u_dataMap: {
-                    get: function (gl, mesh, camera, lightManager, material, programInfo) {
-                        return this.handlerColorOrTexture(mesh.geometry.texture, programInfo.textureIndex);
+                    get: function (mesh, material, programInfo) {
+                        Hilo3d.semantic.handlerColorOrTexture(mesh.geometry.texture, programInfo.textureIndex);
                     }
                 },
                 u_dataMapSize: {
-                    get: function (gl, mesh) {
+                    get: function (mesh) {
                         return [mesh.geometry.texture.width, mesh.geometry.texture.height];
                     }
                 },
                 u_direction: {
-                    get: function (gl, mesh) {
+                    get: function (mesh) {
                         return mesh.u_direction;
                     }
                 },
-                u_jointMat: {
-                    semantic: 'JOINTMATRIX',
-                    isDependOther: true
-                }
+                u_jointMat: 'JOINTMATRIX'
             }
         });
 
