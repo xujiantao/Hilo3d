@@ -293,6 +293,10 @@
             
                 <li  data-name="capabilities.MAX_PRECISION"><a href="capabilities.html#.MAX_PRECISION">MAX_PRECISION</a></li>
             
+                <li  data-name="capabilities.MAX_VERTEX_PRECISION"><a href="capabilities.html#.MAX_VERTEX_PRECISION">MAX_VERTEX_PRECISION</a></li>
+            
+                <li  data-name="capabilities.MAX_FRAGMENT_PRECISION"><a href="capabilities.html#.MAX_FRAGMENT_PRECISION">MAX_FRAGMENT_PRECISION</a></li>
+            
                 <li  data-name="capabilities.VERTEX_TEXTURE_FLOAT"><a href="capabilities.html#.VERTEX_TEXTURE_FLOAT">VERTEX_TEXTURE_FLOAT</a></li>
             
                 <li  data-name="capabilities.FRAGMENT_TEXTURE_FLOAT"><a href="capabilities.html#.FRAGMENT_TEXTURE_FLOAT">FRAGMENT_TEXTURE_FLOAT</a></li>
@@ -308,6 +312,8 @@
                 <li  data-name="capabilities.init"><a href="capabilities.html#.init">init</a></li>
             
                 <li  data-name="capabilities.get"><a href="capabilities.html#.get">get</a></li>
+            
+                <li  data-name="capabilities.getMaxPrecision"><a href="capabilities.html#.getMaxPrecision">getMaxPrecision</a></li>
             
             </ul>
             <ul class="events itemMembers">
@@ -4809,6 +4815,10 @@
             
                 <li  data-name="WebGLRenderer#useFrameBuffer"><a href="WebGLRenderer.html#useFrameBuffer">useFrameBuffer</a></li>
             
+                <li  data-name="WebGLRenderer#vertexPrecision"><a href="WebGLRenderer.html#vertexPrecision">vertexPrecision</a></li>
+            
+                <li  data-name="WebGLRenderer#fragmentPrecision"><a href="WebGLRenderer.html#fragmentPrecision">fragmentPrecision</a></li>
+            
                 <li  data-name="WebGLRenderer#fog"><a href="WebGLRenderer.html#fog">fog</a></li>
             
                 <li  data-name="WebGLRenderer#offsetX"><a href="WebGLRenderer.html#offsetX">offsetX</a></li>
@@ -4913,6 +4923,8 @@
             <ul class="methods itemMembers">
             
             <span class="subtitle"><a href="#methods" class="subtitle-name">Methods</a><a class="toggle-inherited" href="javascript:void(0);" type="method">Show Inherited</a></span>
+            
+                <li  data-name="Shader.init"><a href="Shader.html#.init">init</a></li>
             
                 <li  data-name="Shader.reset"><a href="Shader.html#.reset">reset</a></li>
             
@@ -5928,6 +5940,80 @@
         <tr >
             
                 <td class="name">
+                    <a name="vertexPrecision"></a>
+                    <code>vertexPrecision</code>
+                </td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+                <td class="default">
+                
+                    highp
+                
+                </td>
+            
+            
+            <td class="description last">
+                
+                <p>顶点着色器精度, 可以是以下值：highp, mediump, lowp</p>
+                
+    
+                
+            </td>
+        </tr>
+	
+	
+        <tr >
+            
+                <td class="name">
+                    <a name="fragmentPrecision"></a>
+                    <code>fragmentPrecision</code>
+                </td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+                <td class="default">
+                
+                    mediump
+                
+                </td>
+            
+            
+            <td class="description last">
+                
+                <p>片段着色器精度, 可以是以下值：highp, mediump, lowp</p>
+                
+    
+                
+            </td>
+        </tr>
+	
+	
+        <tr >
+            
+                <td class="name">
                     <a name="fog"></a>
                     <code>fog</code>
                 </td>
@@ -6246,7 +6332,7 @@
         
             
             <div class="tag-source">
-                renderer/WebGLRenderer.js, line 197
+                renderer/WebGLRenderer.js, line 211
             </div>
             
         </div>
@@ -6440,7 +6526,7 @@
         
             
             <div class="tag-source">
-                renderer/WebGLRenderer.js, line 213
+                renderer/WebGLRenderer.js, line 227
             </div>
             
         </div>
@@ -6578,7 +6664,7 @@
         
             
             <div class="tag-source">
-                renderer/WebGLRenderer.js, line 227
+                renderer/WebGLRenderer.js, line 241
             </div>
             
         </div>
@@ -6816,7 +6902,7 @@
         
             
             <div class="tag-source">
-                renderer/WebGLRenderer.js, line 271
+                renderer/WebGLRenderer.js, line 285
             </div>
             
         </div>
@@ -6886,7 +6972,7 @@
         
             
             <div class="tag-source">
-                renderer/WebGLRenderer.js, line 336
+                renderer/WebGLRenderer.js, line 351
             </div>
             
         </div>
@@ -7024,7 +7110,7 @@
         
             
             <div class="tag-source">
-                renderer/WebGLRenderer.js, line 352
+                renderer/WebGLRenderer.js, line 367
             </div>
             
         </div>
@@ -7162,7 +7248,7 @@
         
             
             <div class="tag-source">
-                renderer/WebGLRenderer.js, line 366
+                renderer/WebGLRenderer.js, line 381
             </div>
             
         </div>
@@ -7300,7 +7386,7 @@
         
             
             <div class="tag-source">
-                renderer/WebGLRenderer.js, line 390
+                renderer/WebGLRenderer.js, line 405
             </div>
             
         </div>
@@ -7494,7 +7580,7 @@
         
             
             <div class="tag-source">
-                renderer/WebGLRenderer.js, line 411
+                renderer/WebGLRenderer.js, line 426
             </div>
             
         </div>
@@ -7655,7 +7741,7 @@
         
             
             <div class="tag-source">
-                renderer/WebGLRenderer.js, line 439
+                renderer/WebGLRenderer.js, line 454
             </div>
             
         </div>
@@ -7793,7 +7879,7 @@
         
             
             <div class="tag-source">
-                renderer/WebGLRenderer.js, line 463
+                renderer/WebGLRenderer.js, line 478
             </div>
             
         </div>
@@ -8010,7 +8096,7 @@
         
             
             <div class="tag-source">
-                renderer/WebGLRenderer.js, line 498
+                renderer/WebGLRenderer.js, line 513
             </div>
             
         </div>
@@ -8148,7 +8234,7 @@
         
             
             <div class="tag-source">
-                renderer/WebGLRenderer.js, line 507
+                renderer/WebGLRenderer.js, line 522
             </div>
             
         </div>
@@ -8263,7 +8349,7 @@
         
             
             <div class="tag-source">
-                renderer/WebGLRenderer.js, line 522
+                renderer/WebGLRenderer.js, line 537
             </div>
             
         </div>
@@ -8401,7 +8487,7 @@
         
             
             <div class="tag-source">
-                renderer/WebGLRenderer.js, line 585
+                renderer/WebGLRenderer.js, line 600
             </div>
             
         </div>
@@ -8471,7 +8557,7 @@
         
             
             <div class="tag-source">
-                renderer/WebGLRenderer.js, line 595
+                renderer/WebGLRenderer.js, line 610
             </div>
             
         </div>
@@ -8601,7 +8687,7 @@
         
             
             <div class="tag-source">
-                renderer/WebGLRenderer.js, line 612
+                renderer/WebGLRenderer.js, line 627
             </div>
             
         </div>
@@ -8716,7 +8802,7 @@
         
             
             <div class="tag-source">
-                renderer/WebGLRenderer.js, line 620
+                renderer/WebGLRenderer.js, line 635
             </div>
             
         </div>
@@ -8831,7 +8917,7 @@
         
             
             <div class="tag-source">
-                renderer/WebGLRenderer.js, line 632
+                renderer/WebGLRenderer.js, line 647
             </div>
             
         </div>
@@ -8992,7 +9078,7 @@
         
             
             <div class="tag-source">
-                renderer/WebGLRenderer.js, line 657
+                renderer/WebGLRenderer.js, line 672
             </div>
             
         </div>
@@ -9115,7 +9201,7 @@
         
             
             <div class="tag-source">
-                renderer/WebGLRenderer.js, line 562
+                renderer/WebGLRenderer.js, line 577
             </div>
             
         </div>
@@ -9185,7 +9271,7 @@
         
             
             <div class="tag-source">
-                renderer/WebGLRenderer.js, line 576
+                renderer/WebGLRenderer.js, line 591
             </div>
             
         </div>

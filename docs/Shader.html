@@ -293,6 +293,10 @@
             
                 <li  data-name="capabilities.MAX_PRECISION"><a href="capabilities.html#.MAX_PRECISION">MAX_PRECISION</a></li>
             
+                <li  data-name="capabilities.MAX_VERTEX_PRECISION"><a href="capabilities.html#.MAX_VERTEX_PRECISION">MAX_VERTEX_PRECISION</a></li>
+            
+                <li  data-name="capabilities.MAX_FRAGMENT_PRECISION"><a href="capabilities.html#.MAX_FRAGMENT_PRECISION">MAX_FRAGMENT_PRECISION</a></li>
+            
                 <li  data-name="capabilities.VERTEX_TEXTURE_FLOAT"><a href="capabilities.html#.VERTEX_TEXTURE_FLOAT">VERTEX_TEXTURE_FLOAT</a></li>
             
                 <li  data-name="capabilities.FRAGMENT_TEXTURE_FLOAT"><a href="capabilities.html#.FRAGMENT_TEXTURE_FLOAT">FRAGMENT_TEXTURE_FLOAT</a></li>
@@ -308,6 +312,8 @@
                 <li  data-name="capabilities.init"><a href="capabilities.html#.init">init</a></li>
             
                 <li  data-name="capabilities.get"><a href="capabilities.html#.get">get</a></li>
+            
+                <li  data-name="capabilities.getMaxPrecision"><a href="capabilities.html#.getMaxPrecision">getMaxPrecision</a></li>
             
             </ul>
             <ul class="events itemMembers">
@@ -4809,6 +4815,10 @@
             
                 <li  data-name="WebGLRenderer#useFrameBuffer"><a href="WebGLRenderer.html#useFrameBuffer">useFrameBuffer</a></li>
             
+                <li  data-name="WebGLRenderer#vertexPrecision"><a href="WebGLRenderer.html#vertexPrecision">vertexPrecision</a></li>
+            
+                <li  data-name="WebGLRenderer#fragmentPrecision"><a href="WebGLRenderer.html#fragmentPrecision">fragmentPrecision</a></li>
+            
                 <li  data-name="WebGLRenderer#fog"><a href="WebGLRenderer.html#fog">fog</a></li>
             
                 <li  data-name="WebGLRenderer#offsetX"><a href="WebGLRenderer.html#offsetX">offsetX</a></li>
@@ -4913,6 +4923,8 @@
             <ul class="methods itemMembers">
             
             <span class="subtitle"><a href="#methods" class="subtitle-name">Methods</a><a class="toggle-inherited" href="javascript:void(0);" type="method">Show Inherited</a></span>
+            
+                <li  data-name="Shader.init"><a href="Shader.html#.init">init</a></li>
             
                 <li  data-name="Shader.reset"><a href="Shader.html#.reset">reset</a></li>
             
@@ -5730,6 +5742,121 @@
 <dl >
     <dt>
         <div class="nameContainer">
+            <h4 class="name" id=".init">
+                
+                <span class="type-signature static">static</span>Shader.init<span class="signature">(renderer)</span>
+            </h4>
+        
+            
+            <div class="tag-source">
+                shader/Shader.js, line 78
+            </div>
+            
+        </div>
+    </dt>
+    <dd>
+        
+        
+        <div class="description">
+            <p>初始化</p>
+        </div>
+        
+
+        
+        
+        
+        
+        
+            
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>renderer</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="WebGLRenderer.html">WebGLRenderer</a></span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                </td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+
+        
+
+        
+        
+        
+        
+        
+        
+        
+    </dd>
+</dl>
+        
+            
+<dl >
+    <dt>
+        <div class="nameContainer">
             <h4 class="name" id=".reset">
                 
                 <span class="type-signature static">static</span>Shader.reset<span class="signature">()</span>
@@ -5737,7 +5864,7 @@
         
             
             <div class="tag-source">
-                shader/Shader.js, line 85
+                shader/Shader.js, line 97
             </div>
             
         </div>
@@ -5807,7 +5934,7 @@
         
             
             <div class="tag-source">
-                shader/Shader.js, line 96
+                shader/Shader.js, line 109
             </div>
             
         </div>
@@ -6020,7 +6147,7 @@
         
             
             <div class="tag-source">
-                shader/Shader.js, line 129
+                shader/Shader.js, line 149
             </div>
             
         </div>
@@ -6256,7 +6383,7 @@
         
             
             <div class="tag-source">
-                shader/Shader.js, line 146
+                shader/Shader.js, line 166
             </div>
             
         </div>
@@ -6469,7 +6596,7 @@
         
             
             <div class="tag-source">
-                shader/Shader.js, line 204
+                shader/Shader.js, line 224
             </div>
             
         </div>
