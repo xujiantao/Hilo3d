@@ -16,6 +16,7 @@ Hilo3d, a WebGL Rendering Engine developed by Alibaba Group.It could help develo
   * [geometry_box2](https://hiloteam.github.io/Hilo3d/examples/geometry_box2.html)
   * [geometry_car_inner](https://hiloteam.github.io/Hilo3d/examples/geometry_car_inner.html)
   * [geometry_dynamic](https://hiloteam.github.io/Hilo3d/examples/geometry_dynamic.html)
+  * [geometry_dynamic2](https://hiloteam.github.io/Hilo3d/examples/geometry_dynamic2.html)
   * [geometry_instanced](https://hiloteam.github.io/Hilo3d/examples/geometry_instanced.html)
   * [geometry_line](https://hiloteam.github.io/Hilo3d/examples/geometry_line.html)
   * [geometry_morph](https://hiloteam.github.io/Hilo3d/examples/geometry_morph.html)
