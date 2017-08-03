@@ -41,6 +41,6 @@ var orbitControls = new OrbitControls(stage, {
 });
 
 setTimeout(function(){
-    ticker.start();
+    ticker.start(true);
     gl = renderer.gl;
 }, 10);

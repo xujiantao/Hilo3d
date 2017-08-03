@@ -14,17 +14,21 @@
 <script src="./js/OrbitControls.js"></script>
 <script src="./js/init.js"></script>
 <script>
-    stage.rotationX = 30;
     camera.far = 5;
+    stage.rotationX = 30;
     directionLight.shadow = {};
-    renderer.clearColor.set(0, 0, 0, 1);
     var glTFLoader = new Hilo3d.GLTFLoader();
     glTFLoader.load({
-        src: './models/AnimatedMorphCube/AnimatedMorphCube.gltf'
+        src: './models/birdsA_parrot.gltf'
     }).then(function (model) {
         window.xx = model;
-        model.node.rotationY = -80;
-        model.node.setScale(0.2);
+        model.node.setScale(0.01);
+        model.materials.map(function (m) {
+            m.side = Hilo3d.constants.FRONT_AND_BACK;
+        });
+        model.node.onUpdate = function(){
+            this.rotationY += 1;
+        };
         stage.addChild(model.node);
     });
     var plane = new Hilo3d.Mesh({
@@ -32,10 +36,12 @@
         rotationX: -90,
         geometry: new Hilo3d.PlaneGeometry(),
         material: new Hilo3d.BasicMaterial({
-            cullFace: false,
-            diffuse: new Hilo3d.Color(1, 0, 0)
+            lightType:'LAMBERT',
+            side: Hilo3d.constants.FRONT_AND_BACK,
+            diffuse:new Hilo3d.Color(.612, .612, .612)
         })
     });
+    plane.setScale(1.6);
     stage.addChild(plane);
 </script>
 </body>
