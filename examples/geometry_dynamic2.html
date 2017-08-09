@@ -13,7 +13,7 @@
     <script src="./js/OrbitControls.js"></script>
     <script src="./js/init.js"></script>
     <script>
-        new Hilo3d.AxisHelper().addTo(stage);
+        // new Hilo3d.AxisHelper().addTo(stage);
         var g1 = new Hilo3d.BoxGeometry();
         
         var g2 = new Hilo3d.SphereGeometry({
@@ -55,7 +55,16 @@
             if(gIndex >= gs.length){
                 gIndex = 0;
             }
-        }, 300);
+        }, 500);
+
+        var loader = new Hilo3d.GLTFLoader();
+        loader.load({
+            src:'//ossgw.alicdn.com/tmall-c3/tmx/859ac4d64d171143b730d35da4de7ea8.gltf'
+        }).then(function(model){
+            g5 = model.meshes[0].geometry;
+            gs.push(g5);
+            g5.translate(0, -60, 0).scale(0.005, 0.005, 0.005).rotate(0, -45, 0);
+        });
     </script>
 </body>
 </html>

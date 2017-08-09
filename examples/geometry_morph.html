@@ -15,14 +15,14 @@
 <script src="./js/init.js"></script>
 <script>
     camera.far = 5;
-    stage.rotationX = 30;
+    stage.rotationX = 45;
     directionLight.shadow = {};
     var glTFLoader = new Hilo3d.GLTFLoader();
     glTFLoader.load({
         src: './models/birdsA_parrot.gltf'
     }).then(function (model) {
         window.xx = model;
-        model.node.setScale(0.01);
+        model.node.setScale(0.008);
         model.materials.map(function (m) {
             m.side = Hilo3d.constants.FRONT_AND_BACK;
         });
@@ -30,6 +30,8 @@
             this.rotationY += 1;
         };
         stage.addChild(model.node);
+        model.node.pivotZ = -30;
+        model.node.z = -model.node.pivotZ;
     });
     var plane = new Hilo3d.Mesh({
         y: -.4,
@@ -41,7 +43,7 @@
             diffuse:new Hilo3d.Color(.612, .612, .612)
         })
     });
-    plane.setScale(1.6);
+    plane.setScale(1.8);
     stage.addChild(plane);
 </script>
 </body>

@@ -29,20 +29,12 @@
             fs: './test.frag',
             vs: './test.vert',
             attributes: {
-                a_pos: {
-                    semantic: 'POSITION'
-                },
-                a_uv: {
-                    semantic: 'TEXCOORD_0'
-                }
+                a_pos: 'POSITION',
+                a_uv: 'TEXCOORD_0'
             },
             uniforms: {
-                u_mat: {
-                    semantic:'MODELVIEWPROJECTION'
-                },
-                u_diffuse: {
-                    semantic: 'DIFFUSE'
-                },
+                u_mat: 'MODELVIEWPROJECTION',
+                u_diffuse: 'DIFFUSE',
                 u_diff: {
                     get: function () {
                         return window.u_diff;

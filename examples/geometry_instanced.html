@@ -36,11 +36,11 @@
         }).then(function(diffuse) {
             var textureMaterial = new Hilo3d.BasicMaterial({ 
                 diffuse : diffuse,
-                cullFace:false
+                side:Hilo3d.constants.FRONT_AND_BACK
             });
             var colorMaterial = new Hilo3d.BasicMaterial({ 
                 diffuse : new Hilo3d.Color(0.3, 0.6, 0.9),
-                cullFace:false
+                side:Hilo3d.constants.FRONT_AND_BACK
             });
             var planeGeometry = new Hilo3d.PlaneGeometry();
             var sphereGeometry = new Hilo3d.SphereGeometry({

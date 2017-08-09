@@ -375,3 +375,17 @@ footer {
 .title-name {
   color: #999;
 }
+
+.main article ul ul {
+  margin-top: 7px;
+}
+
+.main article ul{
+  margin-top: 7px;
+}
+
+.main article h3{
+  font-size:18px;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}

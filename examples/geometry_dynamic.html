@@ -21,7 +21,7 @@
         var textureBox = new Hilo3d.Mesh({
             geometry:boxGeometry,
             material: new Hilo3d.BasicMaterial({
-                cullFace:false,
+                side:Hilo3d.constants.FRONT_AND_BACK,
                 diffuse:new Hilo3d.LazyTexture({
                     crossOrigin:true,
                     src:'//gw.alicdn.com/tfs/TB1iNtERXXXXXcBaXXXXXXXXXXX-600-600.png'

@@ -43,7 +43,7 @@
                 a_texcoord0:'TEXCOORD_0'
             },
             fs:`
-                precision highp float;
+                precision HILO_MAX_FRAGMENT_PRECISION float;
                 varying vec2 v_texcoord0;
                 uniform sampler2D u_diffuse;
                 uniform float u_b;
@@ -54,7 +54,7 @@
                 }
             `,
             vs:`
-                precision highp float;
+                precision HILO_MAX_VERTEX_PRECISION float;
                 attribute vec3 a_position;
                 attribute vec2 a_texcoord0;
                 uniform mat4 u_modelViewProjectionMatrix;
