@@ -77,8 +77,8 @@
             z: 0,
             color: new Hilo3d.Color(1, 0, 0),
             direction: new Hilo3d.Vector3(0.4, -1, 0),
-            cutOff: 1,
-            outerCutOff: 1,
+            cutoff: 1,
+            outerCutoff: 1,
             constantAttenuation: 0.01,
             linearAttenuation: 0.01,
             quadraticAttenuation: 0.01,
@@ -87,9 +87,7 @@
                 light.lightShadow && light.lightShadow.updateLightCamera(stage.camera);
             },
             shadow: {
-                // debug: true,
-                maxBias: 0.00001,
-                minBias: 0.0000001
+                // debug: true
             }
         }).addTo(stage);
 
@@ -99,8 +97,8 @@
             z: 0,
             color:new Hilo3d.Color(0, 1, 0),
             direction:new Hilo3d.Vector3(0, -1, 0),
-            cutOff: 20,
-            outerCutOff: 24,
+            cutoff: 20,
+            outerCutoff: 24,
             shadow: {
                 // debug: true
             }
