@@ -19,6 +19,15 @@
 
         constructor: function (params) {
             SphereCubeTexture.superclass.constructor.call(this, params);
+            var that = this;
+            if(this.renderer.isInit){
+                that.init();
+            }
+            else{
+                this.renderer.on('init', function(){
+                    that.init();
+                });
+            }
         },
 
         createFramebuffer: function () {
@@ -104,7 +113,6 @@
             console.timeEnd('SphereCubeTexture')
         },
         getGLTexture() {
-            this.init();
             return this.fbo.texture;
         },
         destroy(gl) {
