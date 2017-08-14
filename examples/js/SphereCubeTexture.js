@@ -1,7 +1,7 @@
 (function () {
     var Class = Hilo3d.Class;
     var CubeTexture = Hilo3d.CubeTexture;
-    var FrameBuffer = Hilo3d.FrameBuffer;
+    var Framebuffer = Hilo3d.Framebuffer;
 
     var LookAtMap = [
         [1, 0, 0, -1, 0, 0, 0, 1, 0, 0, -1, 0, 0, 0, 1, 0, 0, -1],
@@ -21,8 +21,8 @@
             SphereCubeTexture.superclass.constructor.call(this, params);
         },
 
-        createFrameBuffer: function () {
-            this.fbo = new FrameBuffer(this.renderer, {
+        createFramebuffer: function () {
+            this.fbo = new Framebuffer(this.renderer, {
                 target: this.target,
                 width: this.width,
                 height: this.height,
@@ -84,7 +84,7 @@
                 near: 0.1,
             });
 
-            this.createFrameBuffer();
+            this.createFramebuffer();
 
             const fbo = this.fbo;
             const renderer = this.renderer;
