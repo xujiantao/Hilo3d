@@ -14,6 +14,7 @@
 <script src="./js/OrbitControls.js"></script>
 <script src="./js/init.js"></script>
 <script>
+    renderer.clearColor = new Hilo3d.Color(0, 0, 0, 1);
     var container = new Hilo3d.Node();
     var geometry = new Hilo3d.SphereGeometry({
         radius: 1,
@@ -21,22 +22,25 @@
         widthSegments: 64,
     })
     var mesh = new Hilo3d.Mesh({
-        b:0,
-        v:0.05,
+        rotationX:90,
+        time:0,
         geometry: geometry,
         material: new Hilo3d.ShaderMaterial({
+            transparent:true,
+            transparency:1,
             diffuse: new Hilo3d.LazyTexture({
                 crossOrigin: true,
-                src: '//gw.alicdn.com/tfs/TB1VUmoQFXXXXcjXFXXXXXXXXXX-1500-750.jpg'
+                src: '//gw.alicdn.com/tfs/TB1Q8dQSVXXXXciXVXXXXXXXXXX-512-512.jpg'
             }),
             uniforms:{
                 u_diffuse:'DIFFUSE',
                 u_modelViewProjectionMatrix:'MODELVIEWPROJECTION',
-                u_b:{
+                u_time:{
                     get:function(mesh, material, programInfo){
-                        return mesh.b;
+                        return mesh.time;
                     }
-                }
+                },
+                u_transparency:'TRANSPARENCY'
             },
             attributes:{
                 a_position: 'POSITION',
@@ -46,11 +50,13 @@
                 precision HILO_MAX_FRAGMENT_PRECISION float;
                 varying vec2 v_texcoord0;
                 uniform sampler2D u_diffuse;
-                uniform float u_b;
-
+                uniform float u_time;
+                uniform float u_transparency;
                 void main(void) {
-                    vec4 diffuse = texture2D(u_diffuse, v_texcoord0);    
-                    gl_FragColor = vec4(diffuse.gr, u_b, 1.0);
+                    float uOffset = sin(u_time * 0.0005);
+                    float vOffset = cos(u_time * 0.0003);
+                    vec4 diffuse = texture2D(u_diffuse, vec2(v_texcoord0.x + uOffset, v_texcoord0.y + vOffset));    
+                    gl_FragColor = vec4(diffuse.rgb, u_transparency);
                 }
             `,
             vs:`
@@ -67,11 +73,8 @@
                 }
             `
         }),
-        onUpdate(){
-            this.b += this.v;
-            if(this.b > 1 || this.b < 0){
-                this.v *= -1;
-            }
+        onUpdate(dt){
+            this.time += dt;
         }
     });
     container.addChild(mesh);
